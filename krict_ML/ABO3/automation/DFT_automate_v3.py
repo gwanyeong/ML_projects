@@ -7,7 +7,7 @@ Created on Mon Jul 27 22:43:56 2020
 
 
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import shutil
 
 from pymatgen import MPRester
@@ -21,10 +21,11 @@ def createFolder(directory):
         print('Error: Creating directory. ' + directory)
 
 
-# load_dotenv(".env")
-# MATERIALS_KEY = os.getenv("MATERIALS_KEY")
+load_dotenv(".env")
+MATERIALS_KEY = os.getenv("MATERIALS_KEY")
 
-mpr = MPRester('mwEnJkSB9Cusgdf1')
+mpr = MPRester(MATERIALS_KEY)
+# mpr = MPRester('YOUR_MPI_KEY')
 
 mpid_list = []
 
@@ -34,22 +35,14 @@ with open('mpid_list.csv', 'r') as f:
         mpid = line[0]
         mpid_list.append(mpid)
 
-len(mpid_list) # 243개
+len(mpid_list) # 243
 
-entries_from_list = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
-                                            "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
-                                            "Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg"],
-                                "$nin":["La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm",
-                                                   "Yb","Lu","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es",
-                                                   "Fm","Md","No","Lr"]}, 
-                    "anonymous_formula":{"A":1, "B":1, "C":3}, "nelements":3, "spacegroup.number":221,
-                    "crystal_system":"cubic","spacegroup.symbol":"Pm-3m",
-                    "material_id":{"$in":mpid_list}},
+entries_from_list = mpr.query(criteria = {"material_id":{"$in":mpid_list}},
                     properties = ["material_id","task_id","pretty_formula",
                                   "formation_energy_per_atom","cif", "energy","energy_per_atom",
                                   "structure","band_gap","input.incar","magnetic_type","total_magnetization",
                                   "e_above_hull","band_gap","volume","theoretical"])
-len(entries_from_list)  # 243개
+len(entries_from_list)  # 243
 
 entries_inc_alkali = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
                                             "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
@@ -72,8 +65,6 @@ entries_alkali_list = []
 
 for i in range(len(entries_inc_alkali)):
     entries_alkali_list.append(entries_inc_alkali[i]['pretty_formula'])
-
-
 
 entries_inc_W = mpr.query(criteria = {"elements":{"$all":["O","W"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
                                             "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
@@ -111,7 +102,7 @@ entries = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","
                                   "structure","band_gap","input.incar","magnetic_type","total_magnetization",
                                   "e_above_hull","band_gap","volume","theoretical"])
 
-len(entries) # 361개
+len(entries) # 361
 
 for i in range(len(entries)):
     print(entries[i]['pretty_formula'], end = '\t')
@@ -210,17 +201,3 @@ from pymatgen.cli import pmg_potcar
 pmg_potcar.gen_potcar()    
 """
 
-
-"""
-#    exception_list = [24, 91, 94, 99, 100, 103, 117, 118, 119, 120, 122, 123, 
-#                      124, 125, 126, 133, 136, 137, 140, 183,
-#                      204, 205, 208, 210, 211, 213, 217, 219, 222, 224, 226, 230,
-#                      232, 236, 238, 239, 240, 241, 242, 243]
-
-
-
-A와 B site가 바뀐 경우 count.
-    exception_list = [24, 103, 117, 118, 119, 120, 122, 133, 136, 137, 140, 183,
-                      204, 205, 208, 210, 211, 213, 217, 219, 222, 224, 226, 230,
-                      232, 236, 238, 239, 240, 241, 242, 243]
-"""
