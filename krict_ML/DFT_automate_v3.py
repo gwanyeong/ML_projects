@@ -7,7 +7,7 @@ Created on Mon Jul 27 22:43:56 2020
 
 
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import shutil
 
 from pymatgen import MPRester
@@ -21,10 +21,10 @@ def createFolder(directory):
         print('Error: Creating directory. ' + directory)
 
 
-# load_dotenv(".env")
-# MATERIALS_KEY = os.getenv("MATERIALS_KEY")
+load_dotenv(".env")
+MATERIALS_KEY = os.getenv("MATERIALS_KEY")
 
-mpr = MPRester('mwEnJkSB9Cusgdf1')
+# mpr = MPRester('YOUR_MP_API_KEY')
 
 mpid_list = []
 
