@@ -12,10 +12,8 @@ from ase.io.xsd import read_xsd
 from ase.io.vasp import read_vasp, write_vasp
 from pymatgen.io.vasp.inputs import Incar, Kpoints
 
-# from ase.io.xsd import write_xsd
 # from ase.visualize import view
 from math import sqrt
-
 
 def createFolder(directory):
     try:
@@ -26,7 +24,6 @@ def createFolder(directory):
 
 zwitter_AA = read_vasp('POSCAR')
 # view(zwitter_AA)
-
 
 def scalar_sum(array):
     vec_list = []
@@ -47,14 +44,13 @@ for i in range(tot_num):
 zwitter_temp = zwitter_AA
 # view(zwitter_temp)
 
-#count = 0
 
 INCAR = Incar.from_file('INCAR')
 KPOINTS = Kpoints.from_file('KPOINTS')
 
+#count = 0
 for x_int in range(0,6):
     for z_int in range(0,6):
-        
         createFolder('%d_%d_shift' % (x_int, z_int))
 
         for i in range(tot_num):
