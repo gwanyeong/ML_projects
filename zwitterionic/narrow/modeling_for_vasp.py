@@ -8,7 +8,6 @@ Created on Fri Jul 31 08:23:06 2020
 import os
 import shutil
 
-from ase.io.xsd import read_xsd
 from ase.io.vasp import read_vasp, write_vasp
 from pymatgen.io.vasp.inputs import Incar, Kpoints
 
