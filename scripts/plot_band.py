@@ -56,7 +56,7 @@ bsplot.get_plot(zero_to_efermi = True, ylim = [-5,5]).savefig('plots/band.pdf')
 
 # add some features
 ax = plt.gca()
-#ax.set_title("Bandstructure", fontsize = 40) 제목 넣을 때 사용
+#ax.set_title("Bandstructure", fontsize = 40) # use this for setting title
 xlim = ax.get_xlim()
 ax.hlines(0, xlim[0], xlim[1], linestyles="dashed", color="black")
 
@@ -100,8 +100,7 @@ bsplot_proj.get_elt_projected_plots(vbm_cbm_marker = True)
 
 
 """
-getting raw data for specific bands & kpts
-
+# getting raw data for specific bands & kpts
 
 from pymatgen import Spin
 
@@ -144,7 +143,6 @@ with open('plots/summary', 'w') as f:
     elif (vbm and cbm) == None:
         f.writelines("VBM = None,  E_fermi = %4.3f eV, CBM = None\n" % (efermi))
         f.writelines("%s gap = %4.3f eV (transition = %s)" % (bgtype, bg, bgpath))
-
 
 
 """
@@ -200,5 +198,3 @@ if file_list != []:
 
 else:
     print('lobster files are not found !!')
-
-
