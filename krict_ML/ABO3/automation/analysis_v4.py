@@ -31,7 +31,7 @@ U_corr_dict = {'V':1.682, 'Cr':2.013, 'Mn':1.68085, 'Fe':2.733,
                'Co':1.874, 'Ni':2.164, 'Mo':3.531, 'W':5.159}
 
 
-mpr = MPRester('mwEnJkSB9Cusgdf1')
+mpr = MPRester('YOUR_MPI_KEY')
 mpid_list = []
 
 with open('mpid_list.csv', 'r') as f:
