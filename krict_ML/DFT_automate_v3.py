@@ -34,7 +34,7 @@ with open('mpid_list.csv', 'r') as f:
         mpid = line[0]
         mpid_list.append(mpid)
 
-len(mpid_list) # 243개
+len(mpid_list) # 243
 
 entries_from_list = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
                                             "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
@@ -49,7 +49,7 @@ entries_from_list = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc",
                                   "formation_energy_per_atom","cif", "energy","energy_per_atom",
                                   "structure","band_gap","input.incar","magnetic_type","total_magnetization",
                                   "e_above_hull","band_gap","volume","theoretical"])
-len(entries_from_list)  # 243개
+len(entries_from_list)  # 243
 
 entries_inc_alkali = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
                                             "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
@@ -111,7 +111,7 @@ entries = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","
                                   "structure","band_gap","input.incar","magnetic_type","total_magnetization",
                                   "e_above_hull","band_gap","volume","theoretical"])
 
-len(entries) # 361개
+len(entries) # 361
 
 for i in range(len(entries)):
     print(entries[i]['pretty_formula'], end = '\t')
