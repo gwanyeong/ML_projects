@@ -79,7 +79,7 @@ for y_cnt in range(0,11):
     
     INCAR.write_file('%02d_vertical/INCAR' % (y_cnt))
     KPOINTS.write_file('%02d_vertical/KPOINTS' % (y_cnt))    
-    write_vasp('%02d_vertical/POSCAR' % (y_cnt), zwitter_temp)
+    write_vasp('%02d_vertical/POSCAR' % (y_cnt), zwitter_temp, direct = True)
   # write_xsd('%02d_vertical.xsd' % y_cnt, zwitter_temp)
         
     # jobscript copy
