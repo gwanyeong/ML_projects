@@ -1,6 +1,6 @@
 # my_projects
 
-1. krict-db
+1. krict_ML
 : Photoelectrochemical water oxidation reaction for H2O2 generation
 (perovskites, layered transition metal (oxy)(hydro)oxides, transition metal oxides)
 
