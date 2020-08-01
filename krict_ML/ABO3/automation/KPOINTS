@@ -1,0 +1,21 @@
+k-points along high symmetry lines
+ 10              ! 10 intersections
+Line-mode
+rec
+ 0.0 0.0 0.0     ! gamma
+ 0.0 0.5 0.0     ! X
+
+ 0.0 0.5 0.0     ! X
+ 0.5 0.5 0.0     ! M
+
+ 0.5 0.5 0.0     ! M
+ 0.0 0.0 0.0     ! gamma
+
+ 0.0 0.0 0.0     ! gamma
+ 0.5 0.5 0.5     ! R
+ 
+ 0.5 0.5 0.5     ! R
+ 0.0 0.5 0.0     ! X
+
+ 0.5 0.5 0.0     ! M
+ 0.5 0.5 0.5     ! R
