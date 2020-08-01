@@ -52,8 +52,8 @@ zwitter_temp = zwitter_AA
 INCAR = Incar.from_file('INCAR')
 KPOINTS = Kpoints.from_file('KPOINTS')
 
-for x_int in range(0,6):
-    for z_int in range(0,6):
+for x_int in range(0,8):
+    for z_int in range(0,8):
         
         createFolder('%d_%d_shift' % (x_int, z_int))
 
