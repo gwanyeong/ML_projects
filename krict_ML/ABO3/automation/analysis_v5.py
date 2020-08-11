@@ -1,8 +1,11 @@
-
+# -*- coding: utf-8 -*-
 """
-Summary
-""" 
+Created on Fri Jul 10 08:32:56 2020
 
+@author: gyjung
+"""
+
+# Analysis for VASP results
 import csv
 
 from pymatgen import MPRester
