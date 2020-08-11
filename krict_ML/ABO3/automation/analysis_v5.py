@@ -46,7 +46,7 @@ sorted_entries = sorted(entries, key = lambda e: e['e_above_hull'])
 
 with open('summary', 'w') as f:
     f.writelines('No\tformula\ttotal E\tMagm\tF.E.(eV/f.u.)\tVolume\t')
-    f.writelines('VBM\tE_fermi\tCBM\tbgtype\tBand_gap(eV)\tBand_gap_MP(eV)\tBandgap_path\n')
+    f.writelines('Eg_MP(eV)\tEg(eV)\tVBM\tE_fermi\tCBM\tbgtype\tBandgap_path\n')
 
     for idx in range(len(sorted_entries)):
         formula = sorted_entries[idx]['pretty_formula']
