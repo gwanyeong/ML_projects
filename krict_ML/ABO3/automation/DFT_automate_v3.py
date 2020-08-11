@@ -161,7 +161,7 @@ for i in range(len(sorted_entries)):
         INCAR['LDAUTYPE'] = 2
         INCAR['LDAUL'] = [-1, -1, -1]
         INCAR['LDAUU'] = [0.0, 0.0, 0.0]
-        INCAR['LDAUL'] = [0.0, 0.0, 0.0]
+        INCAR['LDAUJ'] = [0.0, 0.0, 0.0]
         
     if formula in entries_W_list:
         #  print(i+1," ",formula)
