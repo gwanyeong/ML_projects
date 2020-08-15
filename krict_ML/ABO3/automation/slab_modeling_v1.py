@@ -29,7 +29,7 @@ def createFolder(directory):
         print('Error: Creating direccotry. ' + directory)
 
 
-mpr = MPRester('mwEnJkSB9Cusgdf1')
+mpr = MPRester('YOUR_MPI_KEY')
       
     
 mpid_list = []
