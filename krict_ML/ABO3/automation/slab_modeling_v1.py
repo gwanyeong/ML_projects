@@ -45,10 +45,7 @@ len(mpid_list) # 243
 
 ###############################################################################
 entries_from_list = mpr.query(criteria = {"material_id":{"$in":mpid_list}},
-                    properties = ["material_id","task_id","pretty_formula",
-                                  "formation_energy_per_atom","cif", "energy","energy_per_atom",
-                                  "structure","band_gap","input.incar","magnetic_type","total_magnetization",
-                                  "e_above_hull","band_gap","volume","theoretical","elements"])
+                    properties = ["pretty_formula","e_above_hull"])
 len(entries_from_list)  # 243
 
 entries = sorted(entries_from_list, key = lambda e: e['e_above_hull'])
@@ -64,9 +61,7 @@ entries_inc_alkali = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc"
                                                    "Yb","Lu","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es",
                                                    "Fm","Md","No","Lr"]}, 
                     "material_id":{"$in":mpid_list}},
-                    properties = ["material_id","task_id","pretty_formula"])
-
-len(entries_inc_alkali)
+                    properties = ["pretty_formula"])
 
 entries_alkali_list = []
 
@@ -143,7 +138,6 @@ with open('model_summary_slabs', 'w') as f:
         mag_dic = dict(zip(element_list, INCAR['MAGMOM']))
         INCAR['MAGMOM'] = [mag_dic[x] for x in sorted(element_list)]
         
-        
         magm = []
         for m, g in itertools.groupby(INCAR['MAGMOM'], lambda x: float(x)):
             magm.append("{}*{}".format(len(tuple(g)), m))
@@ -180,7 +174,6 @@ with open('model_summary_slabs', 'w') as f:
         destination = '%03d_%s/2nd/surface/' % (idx + 1.0, formula)
         job_file = os.getcwd() + '/jobscript_vasp.sh'
         shutil.copy(job_file, destination)    
-
 
         """
         slab modeling
@@ -249,4 +242,3 @@ with open('model_summary_slabs', 'w') as f:
         write_vasp('%03d_%s/2nd/surface/POSCAR' % (idx + 1.0, formula), slab_sorted)
 
         f.writelines(['#'*80,'\n'])
-
