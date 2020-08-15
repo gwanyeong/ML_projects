@@ -26,7 +26,7 @@ def createFolder(directory):
         if not os.path.exists(directory):
             os.makedirs(directory)
     except OSError:
-        print('Error: Creating direccotry. ' + directory)
+        print('Error: Creating directory. ' + directory)
 
 
 mpr = MPRester('YOUR_MPI_KEY')
