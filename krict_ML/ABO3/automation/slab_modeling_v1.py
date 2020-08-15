@@ -20,7 +20,6 @@ import csv
 import itertools
 
 ###############################################################################
-
 def createFolder(directory):
     try:
         if not os.path.exists(directory):
@@ -28,13 +27,10 @@ def createFolder(directory):
     except OSError:
         print('Error: Creating directory. ' + directory)
 
-
+###############################################################################
 mpr = MPRester('YOUR_MPI_KEY')
-      
-    
 mpid_list = []
 
-###############################################################################
 with open('mpid_list.csv', 'r') as f:
     reader = csv.reader(f, delimiter = ',')
     for line in reader:
@@ -52,7 +48,6 @@ entries = sorted(entries_from_list, key = lambda e: e['e_above_hull'])
 
 
 ###############################################################################
-
 entries_inc_alkali = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
                                             "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
                                             "Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg"],
@@ -69,9 +64,7 @@ for i in range(len(entries_inc_alkali)):
     entries_alkali_list.append(entries_inc_alkali[i]['pretty_formula'])
 
 ###############################################################################
-
 from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar
-
 
 with open('model_summary_slabs', 'w') as f:
     
