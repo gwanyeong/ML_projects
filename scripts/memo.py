@@ -21,3 +21,6 @@ del atoms[[atom.index for atom in atoms if atom.symbol == 'C']]
 del atoms[[atom.symbol == 'C' for atom in atoms]]
 
 del surf_2x2[[atom.position[2]/z_param < 0.35 for atom in surf_2x2]]
+
+
+elements = list(set(slab.get_chemical_symbols()))
