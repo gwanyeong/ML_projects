@@ -105,7 +105,7 @@ with open('model_summary_adsorbates', 'w') as f:
             except FileNotFoundError:
                 INCAR = Incar.from_file('%03d_%s/2nd/surface_np/cont/INCAR' % (idx + 1.0, formula))
 
-#           createFolder('%03d_%s/2nd/surface/%s' % (idx + 1.0, formula, adsorbate_names[ads_idx]))
+            createFolder('%03d_%s/2nd/surface/%s' % (idx + 1.0, formula, adsorbate_names[ads_idx]))
         
             add_adsorbate(slab = slab, adsorbate = adsorbates[ads_idx], height = 2.0,
                           position = (slab[metal_index].position[0], slab[metal_index].position[0]))
@@ -166,17 +166,16 @@ with open('model_summary_adsorbates', 'w') as f:
 
 #           view(slab_sorted)
         
-           # write_vasp('%03d_%s/2nd/surface/%s/POSCAR' % (idx + 1.0, formula, adsorbate_names[ads_idx]), slab_sorted)
+            write_vasp('%03d_%s/2nd/surface/%s/POSCAR' % (idx + 1.0, formula, adsorbate_names[ads_idx]), slab_sorted)
            
-           # INCAR.write_file('%03d_%s/2nd/surface/%s/INCAR' % (idx + 1.0, formula, adsorbate_names[ads_idx]))
-           # KPOINTS.write_file('%03d_%s/2nd/surface/%s/KPOINTS' % (idx + 1.0, formula, adsorbate_names[ads_idx]))     
-#            POTCAR.write_file('%03d_%s/2nd/surface/%s/POTCAR' % (idx + 1.0, formula, adsorbate_names[ads_idx]))
+            INCAR.write_file('%03d_%s/2nd/surface/%s/INCAR' % (idx + 1.0, formula, adsorbate_names[ads_idx]))
+            KPOINTS.write_file('%03d_%s/2nd/surface/%s/KPOINTS' % (idx + 1.0, formula, adsorbate_names[ads_idx]))     
+            POTCAR.write_file('%03d_%s/2nd/surface/%s/POTCAR' % (idx + 1.0, formula, adsorbate_names[ads_idx]))
         
             # jobscript copy
             destination = '%03d_%s/2nd/surface/%s/' % (idx + 1.0, formula, adsorbate_names[ads_idx])
             job_file = os.getcwd() + '/jobscript_vasp.sh'
-        #   shutil.copy(job_file, destination)  
+            shutil.copy(job_file, destination)  
 
         f.writelines(['#'*80,'\n'])
-  
-
+ 
