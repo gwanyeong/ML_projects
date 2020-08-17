@@ -24,7 +24,7 @@ def createFolder(directory):
 # load_dotenv(".env")
 # MATERIALS_KEY = os.getenv("MATERIALS_KEY")
 
-mpr = MPRester('mwEnJkSB9Cusgdf1')
+mpr = MPRester('YOUR_MPI_KEY')
 
 mpid_list = []
 
