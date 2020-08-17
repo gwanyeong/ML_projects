@@ -13,12 +13,10 @@ from ase.build import sort
 
 import os
 import shutil
-
-from pymatgen import MPRester
 import csv
-
 import itertools
 
+from pymatgen import MPRester
 from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar
 
 ###############################################################################
