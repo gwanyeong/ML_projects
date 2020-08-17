@@ -30,7 +30,7 @@ def createFolder(directory):
         print('Error: Creating directory. ' + directory)
 
 ###############################################################################
-mpr = MPRester('mwEnJkSB9Cusgdf1')
+mpr = MPRester('YOUR_MPI_KEY')
 mpid_list = []
 
 with open('mpid_list.csv', 'r') as f:
