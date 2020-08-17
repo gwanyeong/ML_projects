@@ -2,7 +2,7 @@
 """
 Created on Sun Aug 16 01:25:53 2020
 
-@author: jky
+@author: gyjung
 """
 
 import os
