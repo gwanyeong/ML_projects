@@ -1,0 +1,1064 @@
+001_SrTcO3_bare
+	Number of Tc in top layer: 4
+	metal_index : 42	position(x,y) : (1.980, 1.980)
+001_SrTcO3_OOH
+	formula: HO34Sr8Tc12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Tc_pv']
+001_SrTcO3_O
+	formula: O33Sr8Tc12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['O', 'Sr_sv', 'Tc_pv']
+001_SrTcO3_OH
+	formula: HO33Sr8Tc12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Tc_pv']
+################################################################################
+002_BaFeO3_bare
+	Number of Fe in top layer: 4
+	metal_index : 10	position(x,y) : (-0.000, -0.000)
+002_BaFeO3_OOH
+	formula: HBa8Fe12O34
+	MAGMOM: ['8*0.6', '12*5.0', '35*0.6']
+	LDAUL: [-1, 2, -1, -1]	  LDAUU: [0.0, 5.3, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Fe_pv', 'H', 'O']
+002_BaFeO3_O
+	formula: Ba8Fe12O33
+	MAGMOM: ['8*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, 2, -1]	  LDAUU: [0.0, 5.3, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Fe_pv', 'O']
+002_BaFeO3_OH
+	formula: HBa8Fe12O33
+	MAGMOM: ['8*0.6', '12*5.0', '34*0.6']
+	LDAUL: [-1, 2, -1, -1]	  LDAUU: [0.0, 5.3, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Fe_pv', 'H', 'O']
+################################################################################
+003_BaMoO3_bare
+	Number of Mo in top layer: 4
+	metal_index : 10	position(x,y) : (-0.000, 0.000)
+003_BaMoO3_OOH
+	formula: HBa8Mo12O34
+	MAGMOM: ['9*0.6', '12*5.0', '34*0.6']
+	LDAUL: [-1, -1, 2, -1]	  LDAUU: [0.0, 0.0, 4.38, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'Mo_pv', 'O']
+003_BaMoO3_O
+	formula: Ba8Mo12O33
+	MAGMOM: ['8*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, 2, -1]	  LDAUU: [0.0, 4.38, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Mo_pv', 'O']
+003_BaMoO3_OH
+	formula: HBa8Mo12O33
+	MAGMOM: ['9*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, -1, 2, -1]	  LDAUU: [0.0, 0.0, 4.38, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'Mo_pv', 'O']
+################################################################################
+004_KTaO3_bare
+	Number of Ta in top layer: 4
+	metal_index : 42	position(x,y) : (-0.000, 0.000)
+004_KTaO3_OOH
+	formula: HK8O34Ta12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Ta_pv']
+004_KTaO3_O
+	formula: K8O33Ta12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['K_sv', 'O', 'Ta_pv']
+004_KTaO3_OH
+	formula: HK8O33Ta12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Ta_pv']
+################################################################################
+005_BaZrO3_bare
+	Number of Zr in top layer: 4
+	metal_index : 42	position(x,y) : (2.118, 2.118)
+005_BaZrO3_OOH
+	formula: HBa8O34Zr12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Zr_sv']
+005_BaZrO3_O
+	formula: Ba8O33Zr12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Zr_sv']
+005_BaZrO3_OH
+	formula: HBa8O33Zr12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Zr_sv']
+################################################################################
+006_SrFeO3_bare
+	Number of Fe in top layer: 4
+	metal_index : 2	position(x,y) : (-0.000, 0.000)
+006_SrFeO3_OOH
+	formula: HFe12O34Sr8
+	MAGMOM: ['12*5.0', '43*0.6']
+	LDAUL: [2, -1, 0, 0]	  LDAUU: [5.3, 0.0, 0, 0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Fe_pv', 'H', 'O', 'Sr_sv']
+006_SrFeO3_O
+	formula: Fe12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [2, 0, 0]	  LDAUU: [5.3, 0, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Fe_pv', 'O', 'Sr_sv']
+006_SrFeO3_OH
+	formula: HFe12O33Sr8
+	MAGMOM: ['12*5.0', '42*0.6']
+	LDAUL: [2, -1, 0, 0]	  LDAUU: [5.3, 0.0, 0, 0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Fe_pv', 'H', 'O', 'Sr_sv']
+################################################################################
+007_KTcO3_bare
+	Number of Tc in top layer: 4
+	metal_index : 42	position(x,y) : (1.954, 1.954)
+007_KTcO3_OOH
+	formula: HK8O34Tc12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Tc_pv']
+007_KTcO3_O
+	formula: K8O33Tc12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['K_sv', 'O', 'Tc_pv']
+007_KTcO3_OH
+	formula: HK8O33Tc12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Tc_pv']
+################################################################################
+008_NaTcO3_bare
+	Number of Tc in top layer: 4
+	metal_index : 42	position(x,y) : (1.926, 1.921)
+008_NaTcO3_OOH
+	formula: HNa8O34Tc12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Tc_pv']
+008_NaTcO3_O
+	formula: Na8O33Tc12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Na_pv', 'O', 'Tc_pv']
+008_NaTcO3_OH
+	formula: HNa8O33Tc12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Tc_pv']
+################################################################################
+009_BaHfO3_bare
+	Number of Hf in top layer: 4
+	metal_index : 10	position(x,y) : (-0.000, -0.000)
+009_BaHfO3_OOH
+	formula: HBa8Hf12O34
+	MAGMOM: ['9*0.6', '12*5.0', '34*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'Hf_pv', 'O']
+009_BaHfO3_O
+	formula: Ba8Hf12O33
+	MAGMOM: ['8*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'Hf_pv', 'O']
+009_BaHfO3_OH
+	formula: HBa8Hf12O33
+	MAGMOM: ['9*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'Hf_pv', 'O']
+################################################################################
+010_SrTiO3_bare
+	Number of Ti in top layer: 4
+	metal_index : 42	position(x,y) : (1.973, 1.973)
+010_SrTiO3_OOH
+	formula: HO34Sr8Ti12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Ti_pv']
+010_SrTiO3_O
+	formula: O33Sr8Ti12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Sr_sv', 'Ti_pv']
+010_SrTiO3_OH
+	formula: HO33Sr8Ti12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Ti_pv']
+################################################################################
+011_SrCuO3_bare
+	Number of Cu in top layer: 4
+	metal_index : 2	position(x,y) : (-0.000, -0.000)
+011_SrCuO3_OOH
+	formula: HCu12O34Sr8
+	MAGMOM: ['12*5.0', '43*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Cu_pv', 'H', 'O', 'Sr_sv']
+011_SrCuO3_O
+	formula: Cu12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Cu_pv', 'O', 'Sr_sv']
+011_SrCuO3_OH
+	formula: HCu12O33Sr8
+	MAGMOM: ['12*5.0', '42*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Cu_pv', 'H', 'O', 'Sr_sv']
+################################################################################
+012_KNbO3_bare
+	Number of Nb in top layer: 4
+	metal_index : 10	position(x,y) : (2.029, 2.029)
+012_KNbO3_OOH
+	formula: HK8Nb12O34
+	MAGMOM: ['9*0.6', '12*5.0', '34*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'Nb_pv', 'O']
+012_KNbO3_O
+	formula: K8Nb12O33
+	MAGMOM: ['8*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['K_sv', 'Nb_pv', 'O']
+012_KNbO3_OH
+	formula: HK8Nb12O33
+	MAGMOM: ['9*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'Nb_pv', 'O']
+################################################################################
+013_NaTaO3_bare
+	Number of Ta in top layer: 4
+	metal_index : 42	position(x,y) : (-0.005, 0.000)
+013_NaTaO3_OOH
+	formula: HNa8O34Ta12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Ta_pv']
+013_NaTaO3_O
+	formula: Na8O33Ta12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Na_pv', 'O', 'Ta_pv']
+013_NaTaO3_OH
+	formula: HNa8O33Ta12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Ta_pv']
+################################################################################
+014_BaScO3_bare
+	Number of Sc in top layer: 4
+	metal_index : 42	position(x,y) : (2.110, 2.110)
+014_BaScO3_OOH
+	formula: HBa8O34Sc12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Sc_sv']
+014_BaScO3_O
+	formula: Ba8O33Sc12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Sc_sv']
+014_BaScO3_OH
+	formula: HBa8O33Sc12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Sc_sv']
+################################################################################
+015_BaPdO3_bare
+	Number of Pd in top layer: 4
+	metal_index : 42	position(x,y) : (2.053, 2.053)
+015_BaPdO3_OOH
+	formula: HBa8O34Pd12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Pd']
+015_BaPdO3_O
+	formula: Ba8O33Pd12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Pd']
+015_BaPdO3_OH
+	formula: HBa8O33Pd12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Pd']
+################################################################################
+016_BaTaO3_bare
+	Number of Ta in top layer: 4
+	metal_index : 42	position(x,y) : (2.065, 2.065)
+016_BaTaO3_OOH
+	formula: HBa8O34Ta12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Ta_pv']
+016_BaTaO3_O
+	formula: Ba8O33Ta12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Ta_pv']
+016_BaTaO3_OH
+	formula: HBa8O33Ta12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Ta_pv']
+################################################################################
+017_SrHfO3_bare
+	Number of Hf in top layer: 4
+	metal_index : 2	position(x,y) : (-0.000, -0.000)
+017_SrHfO3_OOH
+	formula: HHf12O34Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Hf_pv', 'O', 'Sr_sv']
+017_SrHfO3_O
+	formula: Hf12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Hf_pv', 'O', 'Sr_sv']
+017_SrHfO3_OH
+	formula: HHf12O33Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Hf_pv', 'O', 'Sr_sv']
+################################################################################
+018_NaOsO3_bare
+	Number of Os in top layer: 4
+	metal_index : 42	position(x,y) : (0.001, -0.002)
+018_NaOsO3_OOH
+	formula: HNa8O34Os12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Os_pv']
+018_NaOsO3_O
+	formula: Na8O33Os12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Na_pv', 'O', 'Os_pv']
+018_NaOsO3_OH
+	formula: HNa8O33Os12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Os_pv']
+################################################################################
+019_TlTcO3_bare
+	Number of Tc in top layer: 4
+	metal_index : 34	position(x,y) : (1.985, 1.985)
+019_TlTcO3_OOH
+	formula: HO34Tc12Tl8
+	MAGMOM: ['35*0.6', '20*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Tc_pv', 'Tl_d']
+019_TlTcO3_O
+	formula: O33Tc12Tl8
+	MAGMOM: ['33*0.6', '20*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Tc_pv', 'Tl_d']
+019_TlTcO3_OH
+	formula: HO33Tc12Tl8
+	MAGMOM: ['34*0.6', '20*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Tc_pv', 'Tl_d']
+################################################################################
+020_KReO3_bare
+	Number of Re in top layer: 4
+	metal_index : 42	position(x,y) : (1.970, 1.970)
+020_KReO3_OOH
+	formula: HK8O34Re12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Re_pv']
+020_KReO3_O
+	formula: K8O33Re12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['K_sv', 'O', 'Re_pv']
+020_KReO3_OH
+	formula: HK8O33Re12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Re_pv']
+################################################################################
+021_SrRuO3_bare
+	Number of Ru in top layer: 4
+	metal_index : 34	position(x,y) : (0.000, -0.000)
+021_SrRuO3_OOH
+	formula: HO34Ru12Sr8
+	MAGMOM: ['35*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Ru_pv', 'Sr_sv']
+021_SrRuO3_O
+	formula: O33Ru12Sr8
+	MAGMOM: ['33*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Ru_pv', 'Sr_sv']
+021_SrRuO3_OH
+	formula: HO33Ru12Sr8
+	MAGMOM: ['34*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Ru_pv', 'Sr_sv']
+################################################################################
+022_KHfO3_bare
+	Number of Hf in top layer: 4
+	metal_index : 2	position(x,y) : (0.000, 0.000)
+022_KHfO3_OOH
+	formula: HHf12K8O34
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Hf_pv', 'K_sv', 'O']
+022_KHfO3_O
+	formula: Hf12K8O33
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Hf_pv', 'K_sv', 'O']
+022_KHfO3_OH
+	formula: HHf12K8O33
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Hf_pv', 'K_sv', 'O']
+################################################################################
+023_SrVO3_bare
+	Number of V in top layer: 4
+	metal_index : 42	position(x,y) : (0.000, -0.000)
+023_SrVO3_OOH
+	formula: HO34Sr8V12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, 2]	  LDAUU: [0.0, 0.0, 0.0, 3.25]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'V_pv']
+023_SrVO3_O
+	formula: O33Sr8V12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, 2]	  LDAUU: [0.0, 0.0, 3.25]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['O', 'Sr_sv', 'V_pv']
+023_SrVO3_OH
+	formula: HO33Sr8V12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, 2]	  LDAUU: [0.0, 0.0, 0.0, 3.25]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'V_pv']
+################################################################################
+024_KOsO3_bare
+	Number of Os in top layer: 4
+	metal_index : 42	position(x,y) : (1.966, 1.966)
+024_KOsO3_OOH
+	formula: HK8O34Os12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Os_pv']
+024_KOsO3_O
+	formula: K8O33Os12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['K_sv', 'O', 'Os_pv']
+024_KOsO3_OH
+	formula: HK8O33Os12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Os_pv']
+################################################################################
+025_TaAgO3_bare
+	Number of Ta in top layer: 4
+	metal_index : 42	position(x,y) : (-0.000, 0.000)
+025_TaAgO3_OOH
+	formula: HAg8O34Ta12
+	MAGMOM: ['8*5.0', '35*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ag', 'H', 'O', 'Ta_pv']
+025_TaAgO3_O
+	formula: Ag8O33Ta12
+	MAGMOM: ['8*5.0', '33*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ag', 'O', 'Ta_pv']
+025_TaAgO3_OH
+	formula: HAg8O33Ta12
+	MAGMOM: ['8*5.0', '34*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ag', 'H', 'O', 'Ta_pv']
+################################################################################
+026_SrNiO3_bare
+	Number of Ni in top layer: 4
+	metal_index : 2	position(x,y) : (1.943, 1.943)
+026_SrNiO3_OOH
+	formula: HNi12O34Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 6.2, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Ni_pv', 'O', 'Sr_sv']
+026_SrNiO3_O
+	formula: Ni12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [2, 0, 0]	  LDAUU: [6.2, 0, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ni_pv', 'O', 'Sr_sv']
+026_SrNiO3_OH
+	formula: HNi12O33Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 6.2, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Ni_pv', 'O', 'Sr_sv']
+################################################################################
+027_RbIrO3_bare
+	Number of Ir in top layer: 4
+	metal_index : 2	position(x,y) : (2.005, 2.005)
+027_RbIrO3_OOH
+	formula: HIr12O34Rb8
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Ir', 'O', 'Rb_sv']
+027_RbIrO3_O
+	formula: Ir12O33Rb8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ir', 'O', 'Rb_sv']
+027_RbIrO3_OH
+	formula: HIr12O33Rb8
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Ir', 'O', 'Rb_sv']
+################################################################################
+028_NaReO3_bare
+	Number of Re in top layer: 4
+	metal_index : 42	position(x,y) : (1.944, 1.944)
+028_NaReO3_OOH
+	formula: HNa8O34Re12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Re_pv']
+028_NaReO3_O
+	formula: Na8O33Re12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Na_pv', 'O', 'Re_pv']
+028_NaReO3_OH
+	formula: HNa8O33Re12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Re_pv']
+################################################################################
+029_SrMnO3_bare
+	Number of Mn in top layer: 4
+	metal_index : 2	position(x,y) : (0.000, 0.000)
+029_SrMnO3_OOH
+	formula: HMn12O34Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 3.9, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Mn_pv', 'O', 'Sr_sv']
+029_SrMnO3_O
+	formula: Mn12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [2, 0, 0]	  LDAUU: [3.9, 0, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Mn_pv', 'O', 'Sr_sv']
+029_SrMnO3_OH
+	formula: HMn12O33Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 3.9, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Mn_pv', 'O', 'Sr_sv']
+################################################################################
+030_CaFeO3_bare
+	Number of Fe in top layer: 4
+	metal_index : 10	position(x,y) : (-0.000, -0.000)
+030_CaFeO3_OOH
+	formula: HCa8Fe12O34
+	MAGMOM: ['8*0.6', '12*5.0', '35*0.6']
+	LDAUL: [0, 2, -1, 0]	  LDAUU: [0, 5.3, 0.0, 0]	LDAUJ: [0, 0, 0.0, 0]
+	POTCAR_symbols: ['Ca_sv', 'Fe_pv', 'H', 'O']
+030_CaFeO3_O
+	formula: Ca8Fe12O33
+	MAGMOM: ['8*0.6', '12*5.0', '33*0.6']
+	LDAUL: [0, 2, 0]	  LDAUU: [0, 5.3, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ca_sv', 'Fe_pv', 'O']
+030_CaFeO3_OH
+	formula: HCa8Fe12O33
+	MAGMOM: ['8*0.6', '12*5.0', '34*0.6']
+	LDAUL: [0, 2, -1, 0]	  LDAUU: [0, 5.3, 0.0, 0]	LDAUJ: [0, 0, 0.0, 0]
+	POTCAR_symbols: ['Ca_sv', 'Fe_pv', 'H', 'O']
+################################################################################
+031_SrZrO3_bare
+	Number of Zr in top layer: 4
+	metal_index : 42	position(x,y) : (-0.000, 0.000)
+031_SrZrO3_OOH
+	formula: HO34Sr8Zr12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Zr_sv']
+031_SrZrO3_O
+	formula: O33Sr8Zr12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Sr_sv', 'Zr_sv']
+031_SrZrO3_OH
+	formula: HO33Sr8Zr12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Zr_sv']
+################################################################################
+032_NaWO3_bare
+	Number of W in top layer: 4
+	metal_index : 42	position(x,y) : (-0.001, -0.000)
+032_NaWO3_OOH
+	formula: HNa8O34W12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, 2]	  LDAUU: [0.0, 0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'W_sv']
+032_NaWO3_O
+	formula: Na8O33W12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, 2]	  LDAUU: [0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Na_pv', 'O', 'W_sv']
+032_NaWO3_OH
+	formula: HNa8O33W12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, 2]	  LDAUU: [0.0, 0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'W_sv']
+################################################################################
+033_RbTaO3_bare
+	Number of Ta in top layer: 4
+	metal_index : 42	position(x,y) : (0.000, -0.000)
+033_RbTaO3_OOH
+	formula: HO34Rb8Ta12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'O', 'Rb_sv', 'Ta_pv']
+033_RbTaO3_O
+	formula: O33Rb8Ta12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['O', 'Rb_sv', 'Ta_pv']
+033_RbTaO3_OH
+	formula: HO33Rb8Ta12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'O', 'Rb_sv', 'Ta_pv']
+################################################################################
+034_SrCoO3_bare
+	Number of Co in top layer: 4
+	metal_index : 2	position(x,y) : (-0.000, 0.000)
+034_SrCoO3_OOH
+	formula: HCo12O34Sr8
+	MAGMOM: ['12*5.0', '43*0.6']
+	LDAUL: [2, -1, 0, 0]	  LDAUU: [3.32, 0.0, 0, 0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Co', 'H', 'O', 'Sr_sv']
+034_SrCoO3_O
+	formula: Co12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [2, 0, 0]	  LDAUU: [3.32, 0, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Co', 'O', 'Sr_sv']
+034_SrCoO3_OH
+	formula: HCo12O33Sr8
+	MAGMOM: ['12*5.0', '42*0.6']
+	LDAUL: [2, -1, 0, 0]	  LDAUU: [3.32, 0.0, 0, 0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Co', 'H', 'O', 'Sr_sv']
+################################################################################
+035_SrTaO3_bare
+	Number of Ta in top layer: 4
+	metal_index : 42	position(x,y) : (2.033, 2.033)
+035_SrTaO3_OOH
+	formula: HO34Sr8Ta12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Ta_pv']
+035_SrTaO3_O
+	formula: O33Sr8Ta12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Sr_sv', 'Ta_pv']
+035_SrTaO3_OH
+	formula: HO33Sr8Ta12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sr_sv', 'Ta_pv']
+################################################################################
+036_KZrO3_bare
+	Number of Zr in top layer: 4
+	metal_index : 42	position(x,y) : (2.110, 2.110)
+036_KZrO3_OOH
+	formula: HK8O34Zr12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Zr_sv']
+036_KZrO3_O
+	formula: K8O33Zr12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['K_sv', 'O', 'Zr_sv']
+036_KZrO3_OH
+	formula: HK8O33Zr12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Zr_sv']
+################################################################################
+037_CaTiO3_bare
+	Number of Ti in top layer: 4
+	metal_index : 42	position(x,y) : (-0.000, 0.000)
+037_CaTiO3_OOH
+	formula: HCa8O34Ti12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ca_sv', 'H', 'O', 'Ti_pv']
+037_CaTiO3_O
+	formula: Ca8O33Ti12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ca_sv', 'O', 'Ti_pv']
+037_CaTiO3_OH
+	formula: HCa8O33Ti12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ca_sv', 'H', 'O', 'Ti_pv']
+################################################################################
+038_NaRuO3_bare
+	Number of Ru in top layer: 4
+	metal_index : 42	position(x,y) : (1.921, 1.926)
+038_NaRuO3_OOH
+	formula: HNa8O34Ru12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Ru_pv']
+038_NaRuO3_O
+	formula: Na8O33Ru12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Na_pv', 'O', 'Ru_pv']
+038_NaRuO3_OH
+	formula: HNa8O33Ru12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Ru_pv']
+################################################################################
+039_LiTcO3_bare
+	Number of Tc in top layer: 4
+	metal_index : 42	position(x,y) : (1.912, 1.912)
+039_LiTcO3_OOH
+	formula: HLi8O34Tc12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Li_sv', 'O', 'Tc_pv']
+039_LiTcO3_O
+	formula: Li8O33Tc12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Li_sv', 'O', 'Tc_pv']
+039_LiTcO3_OH
+	formula: HLi8O33Tc12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Li_sv', 'O', 'Tc_pv']
+################################################################################
+040_SrPdO3_bare
+	Number of Pd in top layer: 4
+	metal_index : 34	position(x,y) : (2.008, 2.008)
+040_SrPdO3_OOH
+	formula: HO34Pd12Sr8
+	MAGMOM: ['35*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Pd', 'Sr_sv']
+040_SrPdO3_O
+	formula: O33Pd12Sr8
+	MAGMOM: ['33*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Pd', 'Sr_sv']
+040_SrPdO3_OH
+	formula: HO33Pd12Sr8
+	MAGMOM: ['34*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Pd', 'Sr_sv']
+################################################################################
+041_KWO3_bare
+	Number of W in top layer: 4
+	metal_index : 42	position(x,y) : (-0.000, -0.000)
+041_KWO3_OOH
+	formula: HK8O34W12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, 2]	  LDAUU: [0.0, 0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'W_sv']
+041_KWO3_O
+	formula: K8O33W12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, 2]	  LDAUU: [0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['K_sv', 'O', 'W_sv']
+041_KWO3_OH
+	formula: HK8O33W12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, 2]	  LDAUU: [0.0, 0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'W_sv']
+################################################################################
+042_KRhO3_bare
+	Number of Rh in top layer: 4
+	metal_index : 42	position(x,y) : (1.983, 1.983)
+042_KRhO3_OOH
+	formula: HK8O34Rh12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Rh_pv']
+042_KRhO3_O
+	formula: K8O33Rh12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['K_sv', 'O', 'Rh_pv']
+042_KRhO3_OH
+	formula: HK8O33Rh12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Rh_pv']
+################################################################################
+043_BaCuO3_bare
+	Number of Cu in top layer: 4
+	metal_index : 10	position(x,y) : (-0.000, -0.000)
+043_BaCuO3_OOH
+	formula: HBa8Cu12O34
+	MAGMOM: ['8*0.6', '12*5.0', '35*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Cu_pv', 'H', 'O']
+043_BaCuO3_O
+	formula: Ba8Cu12O33
+	MAGMOM: ['8*0.6', '12*5.0', '33*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Cu_pv', 'O']
+043_BaCuO3_OH
+	formula: HBa8Cu12O33
+	MAGMOM: ['8*0.6', '12*5.0', '34*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'Cu_pv', 'H', 'O']
+################################################################################
+044_RbNbO3_bare
+	Number of Nb in top layer: 4
+	metal_index : 2	position(x,y) : (0.000, -0.000)
+044_RbNbO3_OOH
+	formula: HNb12O34Rb8
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'Nb_pv', 'O', 'Rb_sv']
+044_RbNbO3_O
+	formula: Nb12O33Rb8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Nb_pv', 'O', 'Rb_sv']
+044_RbNbO3_OH
+	formula: HNb12O33Rb8
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'Nb_pv', 'O', 'Rb_sv']
+################################################################################
+045_BaOsO3_bare
+	Number of Os in top layer: 4
+	metal_index : 42	position(x,y) : (2.032, 2.032)
+045_BaOsO3_OOH
+	formula: HBa8O34Os12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Os_pv']
+045_BaOsO3_O
+	formula: Ba8O33Os12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Os_pv']
+045_BaOsO3_OH
+	formula: HBa8O33Os12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Os_pv']
+################################################################################
+046_BaRuO3_bare
+	Number of Ru in top layer: 4
+	metal_index : 42	position(x,y) : (2.024, 2.024)
+046_BaRuO3_OOH
+	formula: HBa8O34Ru12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Ru_pv']
+046_BaRuO3_O
+	formula: Ba8O33Ru12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Ru_pv']
+046_BaRuO3_OH
+	formula: HBa8O33Ru12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Ru_pv']
+################################################################################
+047_KRuO3_bare
+	Number of Ru in top layer: 4
+	metal_index : 42	position(x,y) : (0.000, -0.000)
+047_KRuO3_OOH
+	formula: HK8O34Ru12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Ru_pv']
+047_KRuO3_O
+	formula: K8O33Ru12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	POTCAR_symbols: ['K_sv', 'O', 'Ru_pv']
+047_KRuO3_OH
+	formula: HK8O33Ru12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0, 0.0]
+	POTCAR_symbols: ['H', 'K_sv', 'O', 'Ru_pv']
+################################################################################
+048_SrMoO3_bare
+	Number of Mo in top layer: 4
+	metal_index : 2	position(x,y) : (-0.000, 0.000)
+048_SrMoO3_OOH
+	formula: HMo12O34Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 4.38, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Mo_pv', 'O', 'Sr_sv']
+048_SrMoO3_O
+	formula: Mo12O33Sr8
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [2, 0, 0]	  LDAUU: [4.38, 0, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Mo_pv', 'O', 'Sr_sv']
+048_SrMoO3_OH
+	formula: HMo12O33Sr8
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 4.38, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Mo_pv', 'O', 'Sr_sv']
+################################################################################
+049_NaTiO3_bare
+	Number of Ti in top layer: 4
+	metal_index : 42	position(x,y) : (1.952, 1.951)
+049_NaTiO3_OOH
+	formula: HNa8O34Ti12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Ti_pv']
+049_NaTiO3_O
+	formula: Na8O33Ti12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Na_pv', 'O', 'Ti_pv']
+049_NaTiO3_OH
+	formula: HNa8O33Ti12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Na_pv', 'O', 'Ti_pv']
+################################################################################
+050_SrScO3_bare
+	Number of Sc in top layer: 4
+	metal_index : 34	position(x,y) : (2.070, 2.070)
+050_SrScO3_OOH
+	formula: HO34Sc12Sr8
+	MAGMOM: ['35*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sc_sv', 'Sr_sv']
+050_SrScO3_O
+	formula: O33Sc12Sr8
+	MAGMOM: ['33*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Sc_sv', 'Sr_sv']
+050_SrScO3_OH
+	formula: HO33Sc12Sr8
+	MAGMOM: ['34*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Sc_sv', 'Sr_sv']
+################################################################################
+051_RbOsO3_bare
+	Number of Os in top layer: 4
+	metal_index : 34	position(x,y) : (1.988, 1.988)
+051_RbOsO3_OOH
+	formula: HO34Os12Rb8
+	MAGMOM: ['35*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Os_pv', 'Rb_sv']
+051_RbOsO3_O
+	formula: O33Os12Rb8
+	MAGMOM: ['33*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Os_pv', 'Rb_sv']
+051_RbOsO3_OH
+	formula: HO33Os12Rb8
+	MAGMOM: ['34*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Os_pv', 'Rb_sv']
+################################################################################
+052_SrRhO3_bare
+	Number of Rh in top layer: 4
+	metal_index : 34	position(x,y) : (0.000, -0.000)
+052_SrRhO3_OOH
+	formula: HO34Rh12Sr8
+	MAGMOM: ['35*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Rh_pv', 'Sr_sv']
+052_SrRhO3_O
+	formula: O33Rh12Sr8
+	MAGMOM: ['33*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Rh_pv', 'Sr_sv']
+052_SrRhO3_OH
+	formula: HO33Rh12Sr8
+	MAGMOM: ['34*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Rh_pv', 'Sr_sv']
+################################################################################
+053_NaMoO3_bare
+	Number of Mo in top layer: 4
+	metal_index : 2	position(x,y) : (-0.000, 0.006)
+053_NaMoO3_OOH
+	formula: HMo12Na8O34
+	MAGMOM: ['1*0.6', '12*5.0', '42*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 4.38, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Mo_pv', 'Na_pv', 'O']
+053_NaMoO3_O
+	formula: Mo12Na8O33
+	MAGMOM: ['12*5.0', '41*0.6']
+	LDAUL: [2, 0, 0]	  LDAUU: [4.38, 0, 0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Mo_pv', 'Na_pv', 'O']
+053_NaMoO3_OH
+	formula: HMo12Na8O33
+	MAGMOM: ['1*0.6', '12*5.0', '41*0.6']
+	LDAUL: [-1, 2, 0, 0]	  LDAUU: [0.0, 4.38, 0, 0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'Mo_pv', 'Na_pv', 'O']
+################################################################################
+054_SrOsO3_bare
+	Number of Os in top layer: 4
+	metal_index : 34	position(x,y) : (1.996, 1.996)
+054_SrOsO3_OOH
+	formula: HO34Os12Sr8
+	MAGMOM: ['35*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Os_pv', 'Sr_sv']
+054_SrOsO3_O
+	formula: O33Os12Sr8
+	MAGMOM: ['33*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['O', 'Os_pv', 'Sr_sv']
+054_SrOsO3_OH
+	formula: HO33Os12Sr8
+	MAGMOM: ['34*0.6', '12*5.0', '8*0.6']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0.0, 0, 0, 0]
+	POTCAR_symbols: ['H', 'O', 'Os_pv', 'Sr_sv']
+################################################################################
+055_BaRhO3_bare
+	Number of Rh in top layer: 4
+	metal_index : 42	position(x,y) : (2.036, 2.036)
+055_BaRhO3_OOH
+	formula: HBa8O34Rh12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Rh_pv']
+055_BaRhO3_O
+	formula: Ba8O33Rh12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Rh_pv']
+055_BaRhO3_OH
+	formula: HBa8O33Rh12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Rh_pv']
+################################################################################
+056_BaPtO3_bare
+	Number of Pt in top layer: 4
+	metal_index : 42	position(x,y) : (2.060, 2.060)
+056_BaPtO3_OOH
+	formula: HBa8O34Pt12
+	MAGMOM: ['43*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Pt']
+056_BaPtO3_O
+	formula: Ba8O33Pt12
+	MAGMOM: ['41*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'O', 'Pt']
+056_BaPtO3_OH
+	formula: HBa8O33Pt12
+	MAGMOM: ['42*0.6', '12*5.0']
+	LDAUL: [-1, -1, -1, -1]	  LDAUU: [0.0, 0.0, 0.0, 0.0]	LDAUJ: [0, 0.0, 0, 0]
+	POTCAR_symbols: ['Ba_sv', 'H', 'O', 'Pt']
+################################################################################
