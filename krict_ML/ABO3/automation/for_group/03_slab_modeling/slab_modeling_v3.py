@@ -205,7 +205,7 @@ with open('models/slab_modeling.log', 'w') as f:
         # jobscript copy
         destination = '%03d_%s/2nd/surface/' % (idx + 1.0, formula)
         job_file = os.getcwd() + '/jobscript_vasp.sh'
-#       shutil.copy(job_file, destination)    
+        shutil.copy(job_file, destination)    
 
         f.writelines(['#'*80,'\n'])
 
