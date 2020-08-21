@@ -123,7 +123,17 @@ with open('models/adsorbate_modeling_%03d_%03d.log' % (num_ini + 1, num_fin), 'w
             mag_dic = dict(zip(slab.get_chemical_symbols(), INCAR['MAGMOM']))
         
             INCAR['MAGMOM'] = [mag_dic[x] for x in sorted(slab.get_chemical_symbols())]  
-        
+
+            """
+            ## AFM modeling
+            x_list = []
+            for atom in slab:
+                if atom.symbol == slab[metal_index].symbol:
+                    x_list.append(atom.index)
+                    
+            INCAR['MAGMOM'][x_list[0]:(x_list[-1]+1)] = [-5.0, -5.0, 5.0, -5.0, 5.0, 5.0, -5.0, 5.0, 5.0, -5.0, -5.0, 5.0]
+            """
+            
             magm = []
             for m, g in itertools.groupby(INCAR['MAGMOM'], lambda x: float(x)):
                 magm.append("{}*{}".format(len(tuple(g)), m))
