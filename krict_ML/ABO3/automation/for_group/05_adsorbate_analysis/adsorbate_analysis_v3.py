@@ -87,8 +87,8 @@ magm_properties = ['magm_bare', 'magm_OOH', 'magm_O', 'magm_OH']
 
 
 # insert the number of index for analysis here
-num_ini = 10
-num_fin = 20
+num_ini = 0
+num_fin = 10
 num = num_fin - num_ini
 
 with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:     # put AFM, def in the path if required
