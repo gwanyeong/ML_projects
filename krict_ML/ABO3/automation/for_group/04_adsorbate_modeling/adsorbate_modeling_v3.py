@@ -163,17 +163,17 @@ with open('models/adsorbate_modeling_%03d_%03d.log' % (num_ini + 1, num_fin), 'w
                 POTCAR = Potcar(potcar_symbols)
                 f.writelines(['\tPOTCAR_symbols: ',str(potcar_symbols), '\n'])
 
-            view(slab_sorted)
-#           write_vasp(file_path + '%s/POSCAR' % (adsorbate_names[ads_idx]), slab_sorted)
+#           view(slab_sorted)
+            write_vasp(file_path + '%s/POSCAR' % (adsorbate_names[ads_idx]), slab_sorted)
            
-#           INCAR.write_file(file_path + '%s/INCAR' % (adsorbate_names[ads_idx]))
-#           KPOINTS.write_file(file_path + '%s/KPOINTS' % (adsorbate_names[ads_idx]))     
-#           POTCAR.write_file(file_path + '%s/POTCAR' % (adsorbate_names[ads_idx]))
+            INCAR.write_file(file_path + '%s/INCAR' % (adsorbate_names[ads_idx]))
+            KPOINTS.write_file(file_path + '%s/KPOINTS' % (adsorbate_names[ads_idx]))     
+            POTCAR.write_file(file_path + '%s/POTCAR' % (adsorbate_names[ads_idx]))
         
             # jobscript copy
             destination = file_path + adsorbate_names[ads_idx] + '/'
             job_file = os.getcwd() + '/jobscript_vasp.sh'
-#           shutil.copy(job_file, destination)  
+            shutil.copy(job_file, destination)  
 
         f.writelines(['#'*80,'\n'])
     end_time = time.time()
