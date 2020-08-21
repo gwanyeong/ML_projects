@@ -91,7 +91,7 @@ num_ini = 0
 num_fin = 10
 num = num_fin - num_ini
 
-with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:     # put AFM, def in the path if required
+with open('results/results_summary_%03d_%03d.log' % (num_ini+1, num_fin), 'w') as f:     # put AFM, def in the path if required
     start_time = time.time()
    
     df = pd.DataFrame(np.array([['NaN' for i in range(len(properties))] for j in range(num)]),
