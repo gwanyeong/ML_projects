@@ -22,7 +22,6 @@ from ase.visualize import view
 from ase.io.vasp import read_vasp, write_vasp
 from ase.io.xsd import write_xsd
 
-
 ###########################################################################
 def createFolder(directory):
     try:
@@ -44,43 +43,6 @@ load_dotenv(".env")
 MATERIAL_API_KEY = os.getenv("MATERIAL_API_KEY")
 mpr = MPRester(MATERIAL_API_KEY)
 
-"""
-entries = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
-                                   "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
-                                   "Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg"]}, 
-                                   "anonymous_formula":{"A":1, "B":2}, "nelements":2, "spacegroup.number":136,"crystal_system":"tetragonal", # "spacegroup.symbol":"P42/mnm"
-                                   },
-                    properties = ["material_id","task_id","pretty_formula",
-                                  "formation_energy_per_atom","cif", "energy","energy_per_atom",
-                                  "structure","band_gap","input.incar","magnetic_type","total_magnetization",
-                                  "e_above_hull","band_gap","volume","theoretical"])
-
-print('%d number of entries are found!' % len(entries))
-##############################################################################
-
-
-TM_list=[]
-for name in MO2_list:
-    TM_name = name.replace("O2","")
-    TM_list.append(TM_name)
-
-##############################################################################
-
-# Hubbard U choice
-U_dict = {'Co':3.32, 'Cr':3.7, 'Fe':5.3,'Mn':3.9, 'Mo':4.38, 'Ni':6.2,
-                'V':3.25, 'W':7.17}
-U_elements = list(U_dict.keys())
-
-
-# Pseudopotential choice
-PP_dict = {'Sc':'Sc_sv', 'Y':'Y_sv', 'Ti':'Ti_pv', 'Zr':'Zr_sv', 'Hf':'Hf_pv',
-           'V':'V_sv', 'Nb':'Nb_pv', 'Ta':'Ta_pv', 'Cr':'Cr_pv', 'Mo':'Mo_pv',
-           'W':'W_sv', 'Mn':'Mn_pv', 'Tc':'Tc_pv', 'Re':'Re_pv', 'Fe':'Fe_pv',
-           'Co':'Co', 'Ni':'Ni_pv', 'Cu':'Cu_pv', 'Zn':'Zn', 'Ru':'Ru_pv',
-           'Rh':'Rh_pv', 'Pd':'Pd', 'Ag':'Ag', 'Cd':'Cd', 'Hg':'Hg', 'Au':'Au',
-           'Ir':'Ir', 'Pt':'Pt', 'Os':'Os_pv',
-           'H':'H', 'O':'O'}    
-"""
 ##############################################################################
 
 MO2_list = ["ScO2","TiO2","VO2","CrO2","MnO2","FeO2","CoO2","NiO2","CuO2","ZnO2",
