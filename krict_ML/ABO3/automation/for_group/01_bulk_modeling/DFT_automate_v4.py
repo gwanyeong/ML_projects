@@ -52,28 +52,6 @@ sorted_entries = sorted(entries_from_list, key = lambda e: e['e_above_hull'])
 
 ##############################################################################
 
-"""
-entries = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn",
-                                            "Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd",
-                                            "Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg"],
-                                "$nin":["La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm",
-                                                   "Yb","Lu","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es",
-                                                   "Fm","Md","No","Lr"]}, 
-                    "anonymous_formula":{"A":1, "B":1, "C":3}, "nelements":3, "spacegroup.number":221,
-                    "crystal_system":"cubic","spacegroup.symbol":"Pm-3m"},
-                    properties = ["material_id","task_id","pretty_formula",
-                                  "formation_energy_per_atom","cif", "energy","energy_per_atom",
-                                  "structure","band_gap","input.incar","magnetic_type","total_magnetization",
-                                  "e_above_hull","band_gap","volume","theoretical"])
-
-len(entries) # 361
-
-for i in range(len(entries)):
-    print(entries[i]['pretty_formula'], end = '\t')
-"""
-
-#############################################################################
-
 INCAR = Incar.from_file('INCAR_bulk')
 KPOINTS = Kpoints.from_file('KPOINTS_bulk')
 
