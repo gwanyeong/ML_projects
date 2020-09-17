@@ -1,0 +1,753 @@
+001_SrTcO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -386.830073
+	magnetization: 13.642
+001_SrTcO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -402.976397
+	DE_ads(eV): 2.136087
+	magnetization: 10.741
+001_SrTcO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -395.005329
+	DE_ads(eV): -0.726827
+	magnetization: 6.830
+001_SrTcO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -398.741550
+	DE_ads(eV): -1.077494
+	magnetization: 10.772
+002_BaFeO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -316.788022
+	magnetization: 59.992
+002_BaFeO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -330.498648
+	DE_ads(eV): 4.571785
+	magnetization: 60.985
+002_BaFeO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -319.804545
+	DE_ads(eV): 4.431906
+	magnetization: 56.636
+002_BaFeO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -325.893410
+	DE_ads(eV): 1.728594
+	magnetization: 58.790
+003_BaMoO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -359.319984
+	magnetization: 24.000
+003_BaMoO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -374.928469
+	DE_ads(eV): 2.673926
+	magnetization: 23.000
+003_BaMoO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -367.641157
+	DE_ads(eV): -0.872744
+	magnetization: 22.000
+003_BaMoO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -370.750610
+	DE_ads(eV): -0.596644
+	magnetization: 23.000
+004_KTaO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -438.375650
+	magnetization: 0.000
+004_KTaO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -454.427977
+	DE_ads(eV): 2.230084
+	magnetization: 0.989
+004_KTaO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -446.458141
+	DE_ads(eV): -0.634062
+	magnetization: 1.665
+004_KTaO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -450.505852
+	DE_ads(eV): -1.296220
+	magnetization: 0.991
+005_BaZrO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -438.828339
+	magnetization: 0.000
+005_BaZrO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -452.750125
+	DE_ads(eV): 4.360625
+	magnetization: -0.002
+005_BaZrO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -442.153337
+	DE_ads(eV): 4.123430
+	magnetization: -1.331
+005_BaZrO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -448.667677
+	DE_ads(eV): 0.994644
+	magnetization: 0.216
+006_SrFeO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -319.464438
+	magnetization: 53.798
+006_SrFeO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -333.151366
+	DE_ads(eV): 4.595483
+	magnetization: 54.683
+006_SrFeO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -322.326521
+	DE_ads(eV): 4.586345
+	magnetization: 47.490
+006_SrFeO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -328.567278
+	DE_ads(eV): 1.731143
+	magnetization: 53.888
+007_KTcO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -365.187192
+	magnetization: 0.000
+007_KTcO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -380.583997
+	DE_ads(eV): 2.885606
+	magnetization: -1.053
+007_KTcO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -372.209253
+	DE_ads(eV): 0.426367
+	magnetization: 0.934
+007_KTcO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -376.276667
+	DE_ads(eV): -0.255493
+	magnetization: -0.566
+008_NaTcO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -367.816543
+	magnetization: 0.010
+008_NaTcO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -383.294768
+	DE_ads(eV): 2.804186
+	magnetization: -0.345
+008_NaTcO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -374.983508
+	DE_ads(eV): 0.281463
+	magnetization: 1.126
+008_NaTcO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -379.012682
+	DE_ads(eV): -0.362157
+	magnetization: 0.480
+009_BaHfO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -459.591079
+	magnetization: -0.000
+009_BaHfO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -473.681716
+	DE_ads(eV): 4.191774
+	magnetization: 0.629
+009_BaHfO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -463.036401
+	DE_ads(eV): 4.003107
+	magnetization: 1.393
+009_BaHfO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -469.528705
+	DE_ads(eV): 0.896357
+	magnetization: 0.002
+010_SrTiO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -418.989048
+	magnetization: 0.000
+010_SrTiO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -432.984806
+	DE_ads(eV): 4.286653
+	magnetization: -0.736
+010_SrTiO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -422.568715
+	DE_ads(eV): 3.868761
+	magnetization: 1.079
+010_SrTiO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -428.841991
+	DE_ads(eV): 0.981040
+	magnetization: 0.001
+011_SrCuO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -263.514595
+	magnetization: 13.957
+011_SrCuO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -277.134660
+	DE_ads(eV): 4.662346
+	magnetization: 14.040
+011_SrCuO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -266.753378
+	DE_ads(eV): 4.209645
+	magnetization: 14.539
+011_SrCuO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -272.636720
+	DE_ads(eV): 1.711857
+	magnetization: 13.012
+012_KNbO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -407.895860
+	magnetization: -0.190
+012_KNbO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -423.225384
+	DE_ads(eV): 2.952887
+	magnetization: 1.036
+012_KNbO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -414.898884
+	DE_ads(eV): 0.445405
+	magnetization: 1.765
+012_KNbO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -419.241759
+	DE_ads(eV): -0.511916
+	magnetization: 1.066
+013_NaTaO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -439.846183
+	magnetization: 0.001
+013_NaTaO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -456.050632
+	DE_ads(eV): 2.077962
+	magnetization: 0.997
+013_NaTaO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -448.213492
+	DE_ads(eV): -0.918880
+	magnetization: -0.001
+013_NaTaO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -452.104223
+	DE_ads(eV): -1.424057
+	magnetization: 0.997
+014_BaScO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -384.892444
+	magnetization: 12.000
+014_BaScO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -398.542823
+	DE_ads(eV): 4.632031
+	magnetization: 13.000
+014_BaScO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -387.661368
+	DE_ads(eV): 4.679504
+	magnetization: 14.000
+014_BaScO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -393.874856
+	DE_ads(eV): 1.851570
+	magnetization: 13.000
+015_BaPdO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -281.011385
+	magnetization: 16.380
+015_BaPdO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -294.973440
+	DE_ads(eV): 4.320356
+	magnetization: 16.342
+015_BaPdO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -285.024655
+	DE_ads(eV): 3.435159
+	magnetization: 17.483
+015_BaPdO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -290.440162
+	DE_ads(eV): 1.405205
+	magnetization: 16.407
+016_BaTaO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -449.920137
+	magnetization: 2.961
+016_BaTaO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -472.780913
+	DE_ads(eV): -4.578364
+	magnetization: 0.992
+016_BaTaO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -459.960113
+	DE_ads(eV): -2.591547
+	magnetization: 2.088
+016_BaTaO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -462.934724
+	DE_ads(eV): -2.180604
+	magnetization: 2.758
+017_SrHfO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -458.404712
+	magnetization: -0.000
+017_SrHfO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -472.572242
+	DE_ads(eV): 4.114881
+	magnetization: -0.629
+017_SrHfO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -461.921477
+	DE_ads(eV): 3.931663
+	magnetization: 1.478
+017_SrHfO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -468.452874
+	DE_ads(eV): 0.785820
+	magnetization: -0.063
+018_NaOsO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -351.563865
+	magnetization: 7.513
+018_NaOsO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -367.088592
+	DE_ads(eV): 2.757684
+	magnetization: 4.478
+018_NaOsO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -358.455425
+	DE_ads(eV): 0.556868
+	magnetization: 5.937
+018_NaOsO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -363.047241
+	DE_ads(eV): -0.649393
+	magnetization: 2.003
+019_TlTcO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -353.585839
+	magnetization: 1.901
+019_TlTcO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -369.112893
+	DE_ads(eV): 2.755357
+	magnetization: -1.063
+019_TlTcO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -360.740887
+	DE_ads(eV): 0.293380
+	magnetization: 0.757
+019_TlTcO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -364.745690
+	DE_ads(eV): -0.325869
+	magnetization: -2.579
+020_KReO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -387.748751
+	magnetization: 1.071
+020_KReO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -403.836808
+	DE_ads(eV): 2.194354
+	magnetization: 0.594
+020_KReO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -395.760848
+	DE_ads(eV): -0.563668
+	magnetization: 1.250
+020_KReO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -399.611170
+	DE_ads(eV): -1.028436
+	magnetization: 0.643
+021_SrRuO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -354.447099
+	magnetization: 25.619
+021_SrRuO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -369.668774
+	DE_ads(eV): 3.060736
+	magnetization: 24.881
+021_SrRuO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -360.955276
+	DE_ads(eV): 0.940251
+	magnetization: 18.009
+021_SrRuO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -365.316351
+	DE_ads(eV): -0.035270
+	magnetization: 23.548
+022_KHfO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -420.750318
+	magnetization: 4.932
+022_KHfO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -434.571622
+	DE_ads(eV): 4.461107
+	magnetization: 6.686
+022_KHfO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -423.811425
+	DE_ads(eV): 4.387321
+	magnetization: 9.185
+022_KHfO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -429.933208
+	DE_ads(eV): 1.651092
+	magnetization: 7.710
+023_SrVO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -373.338414
+	magnetization: 12.000
+023_SrVO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -388.939477
+	DE_ads(eV): 2.681348
+	magnetization: 11.000
+023_SrVO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -380.290370
+	DE_ads(eV): 0.496473
+	magnetization: 10.000
+023_SrVO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -384.658113
+	DE_ads(eV): -0.485716
+	magnetization: 11.000
+024_KOsO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -349.589927
+	magnetization: 8.741
+024_KOsO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -365.415209
+	DE_ads(eV): 2.457129
+	magnetization: 0.114
+024_KOsO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -356.359135
+	DE_ads(eV): 0.679221
+	magnetization: 5.848
+024_KOsO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -361.182413
+	DE_ads(eV): -0.758503
+	magnetization: -0.079
+025_TaAgO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -424.555103
+	magnetization: -0.001
+025_TaAgO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -440.670192
+	DE_ads(eV): 2.167322
+	magnetization: 1.503
+025_TaAgO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -432.992275
+	DE_ads(eV): -0.988744
+	magnetization: 1.957
+025_TaAgO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -436.740106
+	DE_ads(eV): -1.351020
+	magnetization: 1.506
+026_SrNiO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -252.097414
+	magnetization: 17.207
+026_SrNiO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -266.083750
+	DE_ads(eV): 4.296074
+	magnetization: 3.112
+026_SrNiO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -255.129301
+	DE_ads(eV): 4.416541
+	magnetization: 18.809
+026_SrNiO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -259.752544
+	DE_ads(eV): 3.178852
+	magnetization: 13.761
+027_RbIrO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -300.671759
+	magnetization: 9.654
+027_RbIrO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -315.164665
+	DE_ads(eV): 3.789506
+	magnetization: 10.417
+027_RbIrO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -305.724864
+	DE_ads(eV): 2.395323
+	magnetization: 10.319
+027_RbIrO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -310.824584
+	DE_ads(eV): 0.681158
+	magnetization: 10.660
+028_NaReO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -389.907792
+	magnetization: 1.179
+028_NaReO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -406.086017
+	DE_ads(eV): 2.104186
+	magnetization: 0.598
+028_NaReO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -398.073573
+	DE_ads(eV): -0.717352
+	magnetization: 1.234
+028_NaReO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -401.867338
+	DE_ads(eV): -1.125564
+	magnetization: 0.674
+029_SrMnO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -347.352241
+	magnetization: 36.466
+029_SrMnO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -360.470287
+	DE_ads(eV): 5.164366
+	magnetization: 22.298
+029_SrMnO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -350.173039
+	DE_ads(eV): 4.627631
+	magnetization: 14.883
+029_SrMnO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -355.932761
+	DE_ads(eV): 2.253462
+	magnetization: 21.566
+030_CaFeO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -320.828569
+	magnetization: 53.463
+030_CaFeO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -334.529550
+	DE_ads(eV): 4.581430
+	magnetization: 54.403
+030_CaFeO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -324.020011
+	DE_ads(eV): 4.256987
+	magnetization: 53.060
+030_CaFeO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -330.030862
+	DE_ads(eV): 1.631690
+	magnetization: 53.039
+031_SrZrO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -436.876420
+	magnetization: 0.000
+031_SrZrO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -450.967234
+	DE_ads(eV): 4.191598
+	magnetization: 0.659
+031_SrZrO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -440.310589
+	DE_ads(eV): 4.014259
+	magnetization: 1.528
+031_SrZrO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -446.854883
+	DE_ads(eV): 0.855520
+	magnetization: 0.059
+032_NaWO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -336.740757
+	magnetization: 16.000
+032_NaWO3_OOH files are not found !!
+032_NaWO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -345.786506
+	DE_ads(eV): -1.597320
+	magnetization: 12.000
+032_NaWO3_OH files are not found !!
+033_RbTaO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -433.105656
+	magnetization: -0.000
+033_RbTaO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -449.113774
+	DE_ads(eV): 2.274293
+	magnetization: 0.993
+033_RbTaO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -441.191483
+	DE_ads(eV): -0.637399
+	magnetization: 1.602
+033_RbTaO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -445.231259
+	DE_ads(eV): -1.291621
+	magnetization: 0.999
+034_SrCoO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -297.549668
+	magnetization: 40.892
+034_SrCoO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -311.916331
+	DE_ads(eV): 3.915748
+	magnetization: 40.256
+034_SrCoO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -301.881625
+	DE_ads(eV): 3.116472
+	magnetization: 40.821
+034_SrCoO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -307.516039
+	DE_ads(eV): 0.867612
+	magnetization: 40.519
+035_SrTaO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -449.514066
+	magnetization: 3.837
+035_SrTaO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -473.007331
+	DE_ads(eV): -5.210854
+	magnetization: 1.566
+035_SrTaO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -459.765613
+	DE_ads(eV): -2.803118
+	magnetization: 2.415
+035_SrTaO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -462.665749
+	DE_ads(eV): -2.317700
+	magnetization: 3.124
+036_KZrO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -399.630894
+	magnetization: 5.241
+036_KZrO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -413.433770
+	DE_ads(eV): 4.479534
+	magnetization: 8.241
+036_KZrO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -402.583539
+	DE_ads(eV): 4.495784
+	magnetization: 9.662
+036_KZrO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -408.753085
+	DE_ads(eV): 1.711791
+	magnetization: 8.483
+037_CaTiO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -419.957366
+	magnetization: 0.000
+037_CaTiO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -433.892635
+	DE_ads(eV): 4.347141
+	magnetization: -0.684
+037_CaTiO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -423.514557
+	DE_ads(eV): 3.891237
+	magnetization: 0.982
+037_CaTiO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -429.823086
+	DE_ads(eV): 0.968263
+	magnetization: 0.000
+038_NaRuO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -329.375100
+	magnetization: 7.614
+038_NaRuO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -344.198159
+	DE_ads(eV): 3.459352
+	magnetization: 7.448
+038_NaRuO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -334.972886
+	DE_ads(eV): 1.850643
+	magnetization: 6.558
+038_NaRuO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -339.758484
+	DE_ads(eV): 0.450598
+	magnetization: 7.917
+039_LiTcO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -371.091643
+	magnetization: 0.296
+039_LiTcO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -386.368238
+	DE_ads(eV): 3.005816
+	magnetization: -0.110
+039_LiTcO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -377.938626
+	DE_ads(eV): 0.601446
+	magnetization: 0.391
+039_LiTcO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -382.068511
+	DE_ads(eV): -0.142885
+	magnetization: -0.181
+040_SrPdO3_bare
+	Electronic & ionic converged?: True
+	Final_energy(eV): -279.867349
+	magnetization: 13.908
+040_SrPdO3_OOH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -294.753584
+	DE_ads(eV): 3.396176
+	magnetization: 11.199
+040_SrPdO3_O
+	Electronic & ionic converged?: True
+	Final_energy(eV): -284.159421
+	DE_ads(eV): 3.156357
+	magnetization: 14.561
+040_SrPdO3_OH
+	Electronic & ionic converged?: True
+	Final_energy(eV): -290.096838
+	DE_ads(eV): 0.604494
+	magnetization: 11.470
+Execution time for script (sec) : 38382.2
