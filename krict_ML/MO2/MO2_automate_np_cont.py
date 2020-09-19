@@ -65,6 +65,7 @@ with open('np_cont_modeling.log','w') as f:
             INCAR['IBRION'] = 2
             INCAR['ISPIN'] = 2
             INCAR['NSW'] = 200
+            INCAR['ICHARG'] = 1
     
             INCAR.write_file(file_path + 'cont/INCAR')
             KPOINTS.write_file(file_path + 'cont/KPOINTS')
