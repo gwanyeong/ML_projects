@@ -11,6 +11,7 @@ import time
 import fileinput
 
 from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar, Poscar
+from pymatgen.io.vasp.outputs import Vasprun
 
 #from ase.visualize import view
 from ase.io.vasp import read_vasp, write_vasp
