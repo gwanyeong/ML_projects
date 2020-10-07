@@ -55,7 +55,7 @@ entries = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","
                                   "structure","band_gap","input.incar","magnetic_type","total_magnetization",
                                   "e_above_hull","volume","theoretical"])
 
-print('%d number of entries are found!' % len(entries))
+print('%d entries are found!' % len(entries))
 ##############################################################################
 
 MO2_list = ["ScO2","TiO2","VO2","CrO2","MnO2","FeO2","CoO2","NiO2","CuO2","ZnO2",
