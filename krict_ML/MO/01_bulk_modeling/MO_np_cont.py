@@ -11,20 +11,14 @@ import shutil
 import time
 import fileinput
 
-from dotenv import load_dotenv
-from pymatgen import MPRester
-
 from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar, Poscar
 from pymatgen.io.vasp.outputs import Vasprun
 
-from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
-
-from ase.visualize import view
+# from ase.visualize import view
 from ase.io.vasp import read_vasp, write_vasp
-from ase.io.xsd import write_xsd
+# from ase.io.xsd import write_xsd
 
 ###############################################################################
-
 def createFolder(directory):
     try:
         if not os.path.exists(directory):
@@ -40,25 +34,6 @@ def replace_line(file_name, line_num, text):
     out = open(file_name, 'w')
     out.writelines(lines)
     out.close()
-
-###############################################################################
-
-load_dotenv(".env")
-MATERIAL_API_KEY = os.getenv('MATERIAL_API_KEY')
-mpr = MPRester(MATERIAL_API_KEY)
-
-entries = mpr.query(criteria = {'elements':{'$all':["O"],
-                                            "$in":['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
-                                                   'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
-                                                   'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']},
-                                'anonymous_formula':{'A':1,'B':1},'nelements':2,'spacegroup.number':225,
-                                'crystal_system':'cubic',
-                                },
-                    properties=['material_id', 'pretty_formula', 'formation_energy_per_atom',
-                                'energy', 'energy_per_atom', 'structure', 'band_gap', 'input.incar',
-                                'magnetic_type','total_magnetization','e_above_hull','volume','theoretical','initial_structure'])
-    
-print('%d entries are found!' % len(entries))
 
 ###############################################################################
 
@@ -86,15 +61,7 @@ PP_dict = {'Sc':'Sc_sv', 'Y':'Y_sv', 'Ti':'Ti_pv', 'Zr':'Zr_sv', 'Hf':'Hf_pv',
            'Ir':'Ir', 'Pt':'Pt', 'Os':'Os_pv',
            'H':'H', 'O':'O'}    
 
-createFolder('models')
-
-"""
-for idx, formula in enumerate(MO_list):
-    for k in range(len(entries)):
-        if formula == entries[k]['pretty_formula']:
-            abc = entries[k]['structure'].lattice.abc
-            print(idx," ", k," ",formula," ","%4.3f %4.3f %4.3f " % (abc))
-"""
+###############################################################################
 
 with open('np_cont_modeling.log', 'w') as f:
     start_time = time.time()
@@ -103,8 +70,7 @@ with open('np_cont_modeling.log', 'w') as f:
         
         file_path = '%02d_%s/' % (idx + 1.0, formula)
         createFolder(file_path + 'cont')
-        
-        
+                
         try:
             INCAR = Incar.from_file(file_path + 'INCAR')
             KPOINTS = Kpoints.from_file(file_path + 'KPOINTS')
