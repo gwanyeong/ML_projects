@@ -74,7 +74,7 @@ with open('np_cont_modeling.log', 'w') as f:
             INCAR = Incar.from_file(file_path + 'INCAR')
             KPOINTS = Kpoints.from_file(file_path + 'KPOINTS')
 
-            POSCAR = Poscar.from_file(file_path + 'POSCAR')
+            POSCAR = Poscar.from_file(file_path + 'CONTCAR')
             POSCAR.write_file(file_path + 'cont/POSCAR')
 
             INCAR['IBRION'] = 2
