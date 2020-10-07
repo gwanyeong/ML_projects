@@ -53,7 +53,7 @@ entries = mpr.query(criteria = {"elements":{"$all":["O"], "$in":["Sc","Ti","V","
                     properties = ["material_id","task_id","pretty_formula",
                                   "formation_energy_per_atom","cif", "energy","energy_per_atom",
                                   "structure","band_gap","input.incar","magnetic_type","total_magnetization",
-                                  "e_above_hull","band_gap","volume","theoretical"])
+                                  "e_above_hull","volume","theoretical"])
 
 print('%d number of entries are found!' % len(entries))
 ##############################################################################
