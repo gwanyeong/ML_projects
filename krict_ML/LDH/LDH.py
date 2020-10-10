@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Oct  6 23:14:38 2020
-@author: gyjung
+@author: hjkim
 """
 
 import os
@@ -165,7 +165,6 @@ for idx, formula in enumerate(LDH_list):
         POTCAR.write_file('%02d_%s/POTCAR' % (idx + 1.0, formula))
     
     # jobscript copy
-    
     for n, line in enumerate(fileinput.FileInput('jobscript_vasp.sh')):
         if '#PBS -N' in line:
             n_line = n
