@@ -79,7 +79,6 @@ with open('np_cont_modeling.log', 'w') as f:
 
             INCAR['IBRION'] = 2
             INCAR['ISPIN'] = 2
-            INCAR['MAGMOM'] = [0.6, 0.6, 5.0, 0.6, 0.6]
             INCAR['NSW'] = 200
             INCAR['ICHARG'] = 1
         
