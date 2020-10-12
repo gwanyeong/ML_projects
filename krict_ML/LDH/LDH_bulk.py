@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Oct  6 23:14:38 2020
-@author: gyjung
+@author: hjkim
 """
 
 import os
