@@ -123,6 +123,7 @@ with open('models/slab_modeling_%03d_%03d.log' % (num_ini + 1, num_fin), 'w') as
         INCAR['ISMEAR'] = 0
         INCAR['ISYM'] = 0
         INCAR['IDIPOL'] = 3
+        INCAR['NCORE'] = 16              
         
         # Hubbard U setting
         elements = []
