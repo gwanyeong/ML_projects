@@ -2,7 +2,9 @@
 
 ### 1. krict_ML
 : Photoelectrochemical water oxidation reaction for H2O2 generation
-(perovskites, layered transition metal (oxy)(hydro)oxides, transition metal oxides)
+- ABO3(perovskite oxides)
+- layered transition metal (oxy)(hydro)oxides : MOOH, LDH, LTMO
+- transition metal oxides : MO, MO2, M2O3
 
 
 ### 2. zwitterionic
