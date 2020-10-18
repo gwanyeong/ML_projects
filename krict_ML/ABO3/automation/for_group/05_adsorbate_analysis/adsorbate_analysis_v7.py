@@ -82,7 +82,7 @@ num = num_fin - num_ini
 # Determine whether the analysis includes the calc. time and mag from OUTCAR.
 read_OUTCAR = False
 
-with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:     # put AFM, def in the path if required
+with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:     # put AFM, default in the path if required
     start_time = time.time()
    
     df = pd.DataFrame(np.array([['NaN' for i in range(len(properties))] for j in range(num)]),
@@ -95,7 +95,7 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
     for idx in range(num_ini, num_fin):
         formula = df_entries['formula'][idx]
         df.formula[idx + 1] = formula
-        createFolder('results/%03d_%s' % (idx + 1.0, formula))  # put AFM, def in the path if required
+        createFolder('results/%03d_%s' % (idx + 1.0, formula))  # put AFM, default in the path if required
         
         try:
             if os.path.exists(os.getcwd() + '/%03d_%s/2nd/surface_np/cont/' % (idx + 1.0, formula)):
@@ -147,7 +147,7 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
                 df_mag.magm_bare[idx+1] = str(metal_magm)
             
                 
-            write_xsd('results/%03d_%s/bare.xsd' % (idx + 1.0, formula), bare_opt)   # put AFM, def in the path if required
+            write_xsd('results/%03d_%s/bare.xsd' % (idx + 1.0, formula), bare_opt)   # put AFM, default in the path if required
           # view(bare_opt)
  
             """
@@ -169,9 +169,9 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
                         file_path_ads = file_path + '%s/' % adsorbates[k]
                     print(file_path_ads)
                    
-                    slab_ini = read_vasp(file_path_ads + 'POSCAR')    # put AFM, def in the path if required
-                    slab_opt = read_vasp(file_path_ads + 'CONTCAR')   # put AFM, def in the path if required
-                    v_slab = Vasprun(file_path_ads + 'vasprun.xml')   # put AFM, def in the path if required
+                    slab_ini = read_vasp(file_path_ads + 'POSCAR')    # put AFM, default in the path if required
+                    slab_opt = read_vasp(file_path_ads + 'CONTCAR')   # put AFM, default in the path if required
+                    v_slab = Vasprun(file_path_ads + 'vasprun.xml')   # put AFM, default in the path if required
 
                     E_slab = v_slab.ionic_steps[-1]['e_wo_entrp']
                     DE_ads = E_slab - E_bare - ads_corr[adsorbates[k]]      
@@ -190,7 +190,7 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
                     df.iloc[idx_i][8*k + 10] = float('%4.3f' % DE_ads)
                     df.iloc[idx_i][8*k + 11] = float('%4.3f' % DG_ads)
 
-                    oszicar = Oszicar(file_path_ads + 'OSZICAR')      # put AFM, def in the path if required
+                    oszicar = Oszicar(file_path_ads + 'OSZICAR')      # put AFM, default in the path if required
                     mag_ads = oszicar.ionic_steps[-1]['mag']
                     dmag = mag_ads - mag_bare
                     
@@ -200,7 +200,7 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
                     df.iloc[idx_i][8*k + 14] = len(v_slab.ionic_steps)
  
                     if read_OUTCAR:
-                        outcar_ads = Outcar(file_path_ads + 'OUTCAR')      # put AFM, def in the path if required
+                        outcar_ads = Outcar(file_path_ads + 'OUTCAR')      # put AFM, default in the path if required
                         time_ads = float(outcar_ads.run_stats['Total CPU time used (sec)'])/3600.0
                         df.iloc[idx_i][8*k + 15] = float('%4.3f' % time_ads)
 
@@ -226,7 +226,7 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
 #                   view(slab_opt)
 
                     print(df)
-                    # put AFM, def in the path if required
+                    # put AFM, default in the path if required
                     write_xsd('results/%03d_%s/%s_opt.xsd' % (idx + 1.0, formula, adsorbates[k]), slab_opt)        
                   
                 except:
@@ -235,12 +235,12 @@ with open('results/results_summary_%03d_%03d' % (num_ini+1, num_fin), 'w') as f:
             f.writelines('%03d_%s files are not found !!\n' % (idx + 1.0, formula))
             continue    
 
-    df.to_csv('results/df_summary_%03d_%03d.csv' % (num_ini+1, num_fin))     # put AFM, def in the path if required
-    df.to_pickle('results/df_summary_%03d_%03d.pkl' % (num_ini+1, num_fin))  # put AFM, def in the path if required
+    df.to_csv('results/df_summary_%03d_%03d.csv' % (num_ini+1, num_fin))     # put AFM, default in the path if required
+    df.to_pickle('results/df_summary_%03d_%03d.pkl' % (num_ini+1, num_fin))  # put AFM, default in the path if required
 
     if read_OUTCAR:
-        df_mag.to_csv('results/df_mag_%03d_%03d.csv' % (num_ini+1, num_fin))     # put AFM, def in the path if required
-        df_mag.to_pickle('results/df_mag_%03d_%03d.pkl' % (num_ini+1, num_fin))  # put AFM, def in the path if required
+        df_mag.to_csv('results/df_mag_%03d_%03d.csv' % (num_ini+1, num_fin))     # put AFM, default in the path if required
+        df_mag.to_pickle('results/df_mag_%03d_%03d.pkl' % (num_ini+1, num_fin))  # put AFM, default in the path if required
 
     end_time = time.time()
     f.writelines('Execution time for script (sec) : %6.1f\n' % (end_time - start_time))
