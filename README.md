@@ -20,7 +20,8 @@
 
 ## 2. Zwitterionic
 : zwitterionic COF as solid electrolyte
-- construction of PES, band structure, dos, etc..
+- construction of PES (vertical, lateral shift)
+- band structure, dos, etc..
 
 
 ## 3. scripts
