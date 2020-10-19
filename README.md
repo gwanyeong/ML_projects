@@ -3,7 +3,7 @@
 ## 1. KRICT_ML
 : Photoelectrochemical water oxidation reaction for H2O2 generation
 
-#### Target space
+#### Target data
 - Bulk models : ~1,000
 - Surface models : ~3,000
 
@@ -12,7 +12,7 @@
 - Layered transition metal (oxy)(hydro)oxides : MOOH, LDH, LTMO
 - Transition metal oxides : MO, MO2, M2O3
 
-#### Target data
+#### Target properties
 - Bulk data : formation enthalpy, band gap, magnetic property, volume
 - Surface data : surface energy, adsorption energy (OOH*, O*, OH*) -> _faradaic efficiency, thermodynamic overpotentials_
 
