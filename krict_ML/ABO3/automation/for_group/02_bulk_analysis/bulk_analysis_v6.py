@@ -124,7 +124,7 @@ with open('results/bulk_analysis.log', 'w') as f:
     df_Asite = pd.DataFrame(np.array([['NaN' for i in range(len(properties_Asite))] for j in range(num)]),
                             index = [m for m in range(1, num+1)],
                             columns = properties_Asite)
-    for idx in range(210,len(entries)):
+    for idx in range(num):
         """
         Import from MP_INCAR
         """
