@@ -10,14 +10,11 @@ import pickle
 import time
 import warnings
 warnings.filterwarnings('ignore')
-
 import pandas as pd
 import numpy as np
 
 from dotenv import load_dotenv
-
 from ase.io.vasp import read_vasp
-
 from pymatgen import MPRester, Structure
 from pymatgen.io.vasp import Vasprun, BSVasprun, Oszicar, Outcar
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
