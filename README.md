@@ -1,7 +1,3 @@
-<script type="text/javascript" 
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
-</script>
-
 # my_projects
 
 ## 1. KRICT_ML
@@ -26,7 +22,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 ##### 2) Band structure analysis for bulk models
 ##### 3) Slab modeling
 ##### 4) Adsorbate modeling (OOH*, O* OH*)
-##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcano (2e-,4e-) for $\eta <sub>TD</sub>, f(%)$
+##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcanos(2e-,4e-) for h<sub>TD</sub>, f(%)
 ##### 6) Machine learning using our constructed databse (matminer?)
 
 ## 2. Zwitterionic
