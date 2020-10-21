@@ -14,7 +14,8 @@
 
 #### Target properties
 - Bulk data : formation enthalpy, band gap, magnetic property, volume
-- Surface data : surface energy, adsorption energy (OOH*, O*, OH*) -> _faradaic efficiency, thermodynamic overpotentials_
+- Surface data : surface energy, adsorption energy (OOH*, O*, OH*)
+-> _faradaic efficiency, thermodynamic overpotentials_
 
 
 
