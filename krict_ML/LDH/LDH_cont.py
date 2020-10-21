@@ -89,7 +89,6 @@ with open('np_cont_modeling.log', 'w') as f:
             POTCAR = Potcar.from_file(file_path + 'POTCAR')
             POTCAR.write_file(file_path + 'cont/POTCAR')
 
-            # vasprun.xml converge 됐는지 알수있는 부분이?
             v = Vasprun(file_path + 'vasprun.xml')
             print(file_path,' Electronic & ionic converged?: %s' % v.converged)
             f.writelines([file_path, ' Electronic & ionic converged?: %s\n' % v.converged])
