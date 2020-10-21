@@ -22,7 +22,7 @@
 ##### 2) Band structure analysis for bulk models
 ##### 3) Slab modeling
 ##### 4) Adsorbate modeling (OOH*, O* OH*)
-##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcano (2e-,4e-) for $$\eta <sub>TD</sub>, f(%)$$
+##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcano (2e-,4e-) for $\eta <sub>TD</sub>, f(%)$
 ##### 6) Machine learning using our constructed databse (matminer?)
 
 
