@@ -23,7 +23,7 @@
 ##### 3) Slab modeling
 ##### 4) Adsorbate modeling (OOH*, O* OH*)
 ##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcanos(2e-,4e-) for h<sub>TD</sub>, f(%)
-##### 6) Machine learning based design of active/selective catalyst using our constructed databse (matminer, automatminer)
+##### 6) ML-based design of active, selective catalyst using our constructed databse (matminer, automatminer)
 
 ## 2. Zwitterionic
 : zwitterionic COF as solid electrolyte
