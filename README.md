@@ -1,7 +1,7 @@
 # my_projects
 
 ## 1. KRICT_ML
-: Photoelectrochemical water oxidation reaction for H2O2 generation
+: Photoelectrochemical water oxidation reaction for highly active and selective H<b>2</b>O<b>2</b> generation
 
 #### Target data
 - Bulk models : ~1,000
