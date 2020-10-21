@@ -1,3 +1,7 @@
+<script type="text/javascript" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
 # my_projects
 
 ## 1. KRICT_ML
@@ -16,8 +20,6 @@
 - Bulk data : formation enthalpy, band gap, magnetic property, volume
 - Surface data : surface energy, adsorption energy (OOH*, O*, OH*)
 -> _faradaic efficiency, thermodynamic overpotentials_
-<script type="text/javascript" 
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 
 ## Automatic workflow for DFT calculations
 ##### 1) Bulk modeling (from MP or directly)
@@ -26,8 +28,6 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 ##### 4) Adsorbate modeling (OOH*, O* OH*)
 ##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcano (2e-,4e-) for $\eta <sub>TD</sub>, f(%)$
 ##### 6) Machine learning using our constructed databse (matminer?)
-
-</script>
 
 ## 2. Zwitterionic
 : zwitterionic COF as solid electrolyte
