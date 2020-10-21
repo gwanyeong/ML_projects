@@ -1,7 +1,7 @@
 # my_projects
 
 ## 1. KRICT_ML
-: Photoelectrochemical water oxidation reaction for highly active and selective H<s>2</s>O<s>2</s> generation
+: Photoelectrochemical water oxidation reaction for highly active and selective H<sub>2</sub>O<sub>2</sub> generation
 
 #### Target data
 - Bulk models : ~1,000
