@@ -17,7 +17,7 @@
 - Surface data : surface energy, adsorption energy (OOH*, O*, OH*)
 -> _faradaic efficiency, thermodynamic overpotentials_
 
-## Automatic workflow for DFT calculations
+### - Automatic workflow for DFT calculations
 ##### 1) Bulk modeling (from MP or directly)
 ##### 2) Band structure analysis for bulk models
 ##### 3) Slab modeling
