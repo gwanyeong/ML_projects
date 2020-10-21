@@ -21,9 +21,9 @@
 ##### 1) Bulk modeling (from MP or directly)
 ##### 2) Band structure analysis for bulk models
 ##### 3) Slab modeling
-##### 4) Adsorbate modeling
-##### 5) Adsorbate analysis -> calculating the adsorption free energies (OOH*,O*,OH*) -> \eta_TD, f(%)
-##### 6) Machine learning using our constructed databse
+##### 4) Adsorbate modeling (OOH*, O* OH*)
+##### 5) Adsorbate analysis -> calculating the adsorption free energies -> \Eta <sub>TD</sub>, f(%)
+##### 6) Machine learning using our constructed databse (matminer?)
 
 
 
