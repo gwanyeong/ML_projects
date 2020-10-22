@@ -98,7 +98,6 @@ createFolder('models')
 
 for idx, formula in enumerate(LDH_list):
     createFolder('%02d_%s' % (idx + 1.0,formula))
-    
     TM=TM_list[idx]
     
     # POSCAR import/setup
