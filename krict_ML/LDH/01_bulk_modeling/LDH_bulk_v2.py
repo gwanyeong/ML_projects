@@ -104,19 +104,17 @@ for idx, formula in enumerate(LDH_list):
     # POSCAR import/setup
     if formula in MP_list:
         index = MP_dict[formula]
-        struc = df_entries['structure'][index]
-        sga = SpacegroupAnalyzer(struc,0.1)
-        conv_struc = sga.get_conventional_standard_structure()
-        poscar = Poscar(conv_struc)
-                   
     else:
         index = MP_dict['MnH2O2']
-        struc_ori = df_entries['structure'][index]
-        sga = SpacegroupAnalyzer(struc_ori,0.1)
-        conv_struc = sga.get_conventional_standard_structure()
+
+    struc = df_entries['structure'][index]
+    sga = SpacegroupAnalyzer(struc,0.1)
+    conv_struc = sga.get_conventional_standard_structure()
+    
+    if formula not in MP_list:
         conv_struc.replace(0,TM)
-        poscar = Poscar(conv_struc)
-        
+    poscar = Poscar(conv_struc)
+                        
     poscar.write_file('%02d_%s/POSCAR' % (idx + 1.0, formula))
     poscar_ase = read_vasp('%02d_%s/POSCAR' % (idx + 1.0, formula))
     write_xsd('models/poscar_%02d_%s.xsd' % (idx +  1.0, formula), poscar_ase)                
