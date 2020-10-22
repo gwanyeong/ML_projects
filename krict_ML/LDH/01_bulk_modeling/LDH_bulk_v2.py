@@ -105,7 +105,6 @@ for idx, formula in enumerate(LDH_list):
     if formula in MP_list:
         index = MP_dict[formula]
         struc = df_entries['structure'][index]
-
         sga = SpacegroupAnalyzer(struc,0.1)
         conv_struc = sga.get_conventional_standard_structure()
         poscar = Poscar(conv_struc)
