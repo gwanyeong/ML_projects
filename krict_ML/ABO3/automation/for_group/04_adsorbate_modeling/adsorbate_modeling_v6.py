@@ -64,7 +64,7 @@ with open('models/adsorbate_modeling_%03d_%03d.log' % (num_ini + 1, num_fin), 'w
         try:
             if os.path.exists(os.getcwd() + '/%03d_%s/2nd/surface_np/cont/' % (idx + 1.0, formula)):
                 file_path = ('%03d_%s/2nd/surface_np/cont/') % (idx + 1.0, formula)
-                f.writelines('(Note) %03d_%s : spin-restricted calc. was initially perforemd\n' % (idx + 1.0, formula))
+                f.writelines('(Note) %03d_%s : spin-restricted calc. was initially performed\n' % (idx + 1.0, formula))
             elif os.path.exists(os.getcwd() + '/%03d_%s/2nd/surface/2nd/' % (idx + 1.0, formula)):
                 file_path = ('%03d_%s/2nd/surface/2nd/') % (idx + 1.0, formula)
             else:
