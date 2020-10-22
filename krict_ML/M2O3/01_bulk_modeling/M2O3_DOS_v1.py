@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug 15 11:40:47 2020
