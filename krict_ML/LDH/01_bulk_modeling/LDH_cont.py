@@ -16,7 +16,6 @@ from pymatgen.io.vasp.outputs import Vasprun
 from ase.io.vasp import read_vasp, write_vasp
 from ase.io.xsd import write_xsd
 
-
 ###########################################################################
 def createFolder(directory):
     try:
