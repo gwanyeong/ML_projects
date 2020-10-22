@@ -142,10 +142,10 @@ for idx, formula in enumerate(LDH_list):
     KPOINTS.write_file('%02d_%s/KPOINTS' % (idx + 1.0, formula))
     
     # POTCAR setup
-  #  POTCAR = Potcar([PP_dict[TM], PP_dict['H'], PP_dict['O']])
-  #  POTCAR.write_file('%02d_%s/POTCAR' % (idx + 1.0, formula))
-
+    POTCAR = Potcar([PP_dict[TM], PP_dict['H'], PP_dict['O']])
+    POTCAR.write_file('%02d_%s/POTCAR' % (idx + 1.0, formula))
     print('%02d' % (idx + 1.0)," ",formula," ",conv_struc.species," ", len(conv_struc), " %4.3f %4.3f %4.3f" % (conv_struc.lattice.abc))
+
     # jobscript copy   
     for n, line in enumerate(fileinput.FileInput('jobscript_vasp.sh')):
         if '#PBS -N' in line:
