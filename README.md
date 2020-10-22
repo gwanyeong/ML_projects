@@ -19,7 +19,7 @@
 
 ### - Automatic workflow for DFT calculations
 ##### 1) Bulk modeling (from MP or directly)
-##### 2) Bulk model analysis (bandgap, $\Delta H_f$, magnetization, lattice ..)
+##### 2) Bulk model analysis (bandgap, DH<sub>f</sub>, magnetization, lattice ..)
 ##### 3) Slab modeling
 ##### 4) Adsorbate modeling (OOH*, O* OH*)
 ##### 5) Adsorbate analysis -> calculating the adsorption free energies -> volcanos(2e-,4e-) for h<sub>TD</sub>, f(%)
