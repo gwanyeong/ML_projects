@@ -101,17 +101,6 @@ df_entries.index = range(len(df_entries_ori),len(df_entries_ori) + len(df_entrie
 df_entries # 105 entries
 
 #############################################################################
-
-# Pseudopotential choice
-PP_dict = {'Sc':'Sc_sv', 'Y':'Y_sv', 'Ti':'Ti_pv', 'Zr':'Zr_sv', 'Hf':'Hf_pv',
-           'V':'V_sv', 'Nb':'Nb_pv', 'Ta':'Ta_pv', 'Cr':'Cr_pv', 'Mo':'Mo_pv',
-           'W':'W_sv', 'Mn':'Mn_pv', 'Tc':'Tc_pv', 'Re':'Re_pv', 'Fe':'Fe_pv',
-           'Co':'Co', 'Ni':'Ni_pv', 'Cu':'Cu_pv', 'Zn':'Zn', 'Ru':'Ru_pv',
-           'Rh':'Rh_pv', 'Pd':'Pd', 'Ag':'Ag', 'Cd':'Cd', 'Hg':'Hg', 'Au':'Au',
-           'Ir':'Ir', 'Pt':'Pt', 'Os':'Os_pv',
-           'H':'H', 'O':'O'}  
-
-#############################################################################
 # Hubbard U choice
 U_dict = {'Co':3.32, 'Cr':3.7, 'Fe':5.3,'Mn':3.9, 'Mo':4.38, 'Ni':6.2,
                 'V':3.25, 'W':7.17}
