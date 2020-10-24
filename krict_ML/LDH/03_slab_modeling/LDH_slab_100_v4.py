@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug 15 11:40:47 2020
-@author: gyjung
+@author: hjkim
 """
 
 import os
@@ -144,7 +144,6 @@ with open('models_slab/slab_modeling.log', 'w') as f:
         mag_dic = dict(zip(elements, mag_list))
         
         magmom = []
-        
         for el in slab_sorted.get_chemical_symbols():
             magmom.append(mag_dic[el])    
         
@@ -154,11 +153,9 @@ with open('models_slab/slab_modeling.log', 'w') as f:
         for m, g in itertools.groupby(INCAR['MAGMOM'], lambda x: float(x)):
             magm.append("{}*{}".format(len(tuple(g)), m))
             
-        
         """
         POTCAR
         """
-
         potcar_ori = Potcar.from_file(file_path + 'POTCAR')
         potcar_symbols = potcar_ori.as_dict()['symbols']
         potcar_symbols.sort()
@@ -176,11 +173,11 @@ with open('models_slab/slab_modeling.log', 'w') as f:
         """
         Write files
         """
-#       write_vasp(file_path + 'slab_100/POSCAR', slab_sorted)
-#       INCAR.write_file(file_path + 'slab_100/INCAR')
-#       KPOINTS.write_file(file_path + 'slab_100/KPOINTS')
-#       POTCAR.write_file(file_path + 'slab_100/POTCAR')
-        view(slab_sorted)
+        write_vasp(file_path + 'slab_100/POSCAR', slab_sorted)
+        INCAR.write_file(file_path + 'slab_100/INCAR')
+        KPOINTS.write_file(file_path + 'slab_100/KPOINTS')
+        POTCAR.write_file(file_path + 'slab_100/POTCAR')
+#       view(slab_sorted)
 
         # jobscript copy
         for n, line in enumerate(fileinput.FileInput('jobscript_vasp.sh')):
@@ -206,8 +203,7 @@ with open('models_slab/slab_modeling.log', 'w') as f:
 
         destination = file_path + 'slab_100/'
         job_file = os.getcwd() + '/jobscript_vasp.sh'
-#       shutil.copy(job_file, destination)    
+        shutil.copy(job_file, destination)    
 
     end_time = time.time()
     f.writelines('Execution time for script (sec) : %6.1f\n' % (end_time - start_time))
-     
