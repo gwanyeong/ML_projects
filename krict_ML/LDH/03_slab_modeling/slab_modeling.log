@@ -1,0 +1,175 @@
+01_ScH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Sc']
+	POTCAR_symbols: ['H', 'O', 'Sc_sv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+02_TiH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Ti']
+	POTCAR_symbols: ['H', 'O', 'Ti_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+03_VH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'V']
+	POTCAR_symbols: ['H', 'O', 'V_sv']
+	LDAUL: [-1, -1, 2]	LDAUU: [0.0, 0.0, 3.25]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+04_CrH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Cr', 'H', 'O']
+	POTCAR_symbols: ['Cr_pv', 'H', 'O']
+	LDAUL: [2, -1, -1]	LDAUU: [3.7, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+05_MnH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Mn', 'O']
+	POTCAR_symbols: ['H', 'Mn_pv', 'O']
+	LDAUL: [-1, 2, -1]	LDAUU: [0.0, 3.9, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+06_FeH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Fe', 'H', 'O']
+	POTCAR_symbols: ['Fe_pv', 'H', 'O']
+	LDAUL: [2, -1, -1]	LDAUU: [5.3, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+07_CoH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Co', 'H', 'O']
+	POTCAR_symbols: ['Co', 'H', 'O']
+	LDAUL: [2, -1, -1]	LDAUU: [3.32, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+08_NiH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Ni', 'O']
+	POTCAR_symbols: ['H', 'Ni_pv', 'O']
+	LDAUL: [-1, 2, -1]	LDAUU: [0.0, 6.2, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+09_CuH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Cu', 'H', 'O']
+	POTCAR_symbols: ['Cu_pv', 'H', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+10_ZnH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Zn']
+	POTCAR_symbols: ['H', 'O', 'Zn']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+11_YH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Y']
+	POTCAR_symbols: ['H', 'O', 'Y_sv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+12_ZrH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Zr']
+	POTCAR_symbols: ['H', 'O', 'Zr_sv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+13_NbH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Nb', 'O']
+	POTCAR_symbols: ['H', 'Nb_pv', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+14_MoH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Mo', 'O']
+	POTCAR_symbols: ['H', 'Mo_pv', 'O']
+	LDAUL: [-1, 2, -1]	LDAUU: [0.0, 4.38, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+15_TcH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Tc']
+	POTCAR_symbols: ['H', 'O', 'Tc_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+16_RuH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Ru']
+	POTCAR_symbols: ['H', 'O', 'Ru_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+17_RhH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Rh']
+	POTCAR_symbols: ['H', 'O', 'Rh_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+18_PdH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Pd']
+	POTCAR_symbols: ['H', 'O', 'Pd']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+19_AgH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Ag', 'H', 'O']
+	POTCAR_symbols: ['Ag', 'H', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+20_CdH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Cd', 'H', 'O']
+	POTCAR_symbols: ['Cd', 'H', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+21_HfH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Hf', 'O']
+	POTCAR_symbols: ['H', 'Hf_pv', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+22_TaH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Ta']
+	POTCAR_symbols: ['H', 'O', 'Ta_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+23_WH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'W']
+	POTCAR_symbols: ['H', 'O', 'W_sv']
+	LDAUL: [-1, -1, 2]	LDAUU: [0.0, 0.0, 7.17]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+24_ReH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Re']
+	POTCAR_symbols: ['H', 'O', 'Re_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+25_OsH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Os']
+	POTCAR_symbols: ['H', 'O', 'Os_pv']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+26_IrH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Ir', 'O']
+	POTCAR_symbols: ['H', 'Ir', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+27_PtH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'O', 'Pt']
+	POTCAR_symbols: ['H', 'O', 'Pt']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['32*0.6', '8*5.0']
+28_AuH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['Au', 'H', 'O']
+	POTCAR_symbols: ['Au', 'H', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['8*5.0', '32*0.6']
+29_HgH2O2
+	N_atoms(before): 50    N_atoms(after) : 40    N_atoms(fixed) : 20
+	elements: ['H', 'Hg', 'O']
+	POTCAR_symbols: ['H', 'Hg', 'O']
+	LDAUL: [-1, -1, -1]	LDAUU: [0.0, 0.0, 0.0]	LDAUJ: [0.0, 0.0, 0.0]
+	MAGMOM: ['16*0.6', '8*5.0', '16*0.6']
+Execution time for script (sec) :    9.6
