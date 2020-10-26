@@ -138,13 +138,13 @@ with open('bulk_modeling_cont.log', 'w') as f:
                 INCAR['NSW'] = 200
                 INCAR['ICHARG'] = 1
         
-#               INCAR.write_file(file_path + '2nd/INCAR')
-#               KPOINTS.write_file(file_path + '2nd/KPOINTS')
-#               POSCAR.write_file(file_path + '2nd/POSCAR')
+                INCAR.write_file(file_path + '2nd/INCAR')
+                KPOINTS.write_file(file_path + '2nd/KPOINTS')
+                POSCAR.write_file(file_path + '2nd/POSCAR')
         
                 # Potcar setup 
                 POTCAR = Potcar.from_file(file_path + 'POTCAR')
-#               POTCAR.write_file(file_path + '2nd/POTCAR')
+                POTCAR.write_file(file_path + '2nd/POTCAR')
         
                 # jobscript copy
                 for n,line in enumerate(fileinput.FileInput('jobscript_vasp.sh')):
