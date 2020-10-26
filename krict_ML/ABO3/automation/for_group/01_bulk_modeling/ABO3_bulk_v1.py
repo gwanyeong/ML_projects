@@ -154,8 +154,8 @@ with open('bulk_modeling_new.log', 'w') as f:
                 INCAR['LDAUL'][index] = 2
                 INCAR['LDAUU'][index] = U_dict[element]
         
-#        INCAR.write_file('%03d_%s/INCAR' % (idx + 1.0, formula))
-#        KPOINTS.write_file('%03d_%s/KPOINTS' % (idx + 1.0, formula))       
+        INCAR.write_file('%03d_%s/INCAR' % (idx + 1.0, formula))
+        KPOINTS.write_file('%03d_%s/KPOINTS' % (idx + 1.0, formula))       
         
         # Potcar setup 
         mp_calc = mpr.get_entry_by_material_id({'material_id': mp_id})
@@ -167,10 +167,10 @@ with open('bulk_modeling_new.log', 'w') as f:
             mp_potcar_symbols[1] = 'W_sv'
 
         POTCAR = Potcar(mp_potcar_symbols)
-#       POTCAR.write_file(file_path + 'POTCAR')
+        POTCAR.write_file(file_path + 'POTCAR')
         
-#        print('%02d' % (idx + 1.0)," ",formula," ",conv_struc.formula," ",len(conv_struc), " %4.3f %4.3f %4.3f" % (conv_struc.lattice.abc),
-#              " ",mp_potcar_symbols," ",INCAR['LDAUU']," %s" % INCAR['MAGMOM'])
+        print('%02d' % (idx + 1.0)," ",formula," ",conv_struc.formula," ",len(conv_struc), " %4.3f %4.3f %4.3f" % (conv_struc.lattice.abc),
+              " ",mp_potcar_symbols," ",INCAR['LDAUU']," %s" % INCAR['MAGMOM'])
         f.writelines(['%02d' % (idx + 1.0)," ",formula," ",conv_struc.formula," ",str(len(conv_struc)),
                       " %4.3f %4.3f %4.3f" % (conv_struc.lattice.abc)," %s" % mp_potcar_symbols,
                       " %s" % INCAR['LDAUU']," %s\n" % INCAR['MAGMOM']])
@@ -193,7 +193,7 @@ with open('bulk_modeling_new.log', 'w') as f:
         replace_line('jobscript_vasp.sh', q_line, PBS_q)
         
         job_file = os.getcwd() + '/jobscript_vasp.sh'
-#       shutil.copy(job_file, file_path)
+        shutil.copy(job_file, file_path)
 
     end_time = time.time()
     f.writelines('Execution time for script (sec) : %6.1f\n' % (end_time - start_time))
