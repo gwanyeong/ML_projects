@@ -122,7 +122,7 @@ with open('results/bulk_analysis.log', 'w') as f:
     f.writelines('No\tformula\tEg_MP(eV)\tEg(eV)\tVBM\tE_fermi\tCBM\tbgtype\tBandgap_path\n')
     
     # insert the number of index(models) for analysis
-    num_ini = 239
+    num_ini = 0
     num = len(df_entries)    # len(df_entries) 
     
     df_bulk = pd.DataFrame(np.array([['NaN' for i in range(len(properties))] for j in range(num)]),
@@ -356,11 +356,11 @@ with open('results/bulk_analysis.log', 'w') as f:
             print('%sDOS files - unknown error' % (file_path))
             continue
 
-#   df_bulk.to_csv('results/df_bulk_v2.csv')
-#   df_bulk.to_pickle('results/df_bulk_v2.pkl')
+    df_bulk.to_csv('results/df_bulk_v2.csv')
+    df_bulk.to_pickle('results/df_bulk_v2.pkl')
     
-#   df_Asite.to_csv('results/df_Asite.csv')
-#   df_Asite.to_pickle('results/df_Asite.pkl')
+    df_Asite.to_csv('results/df_Asite.csv')
+    df_Asite.to_pickle('results/df_Asite.pkl')
 
     end_time = time.time()
     f.writelines('Execution time for script (sec) : %6.1f\n' % (end_time - start_time))
