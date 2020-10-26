@@ -10,11 +10,14 @@ import shutil
 import time
 import fileinput
 import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
 
 from dotenv import load_dotenv
 
 from pymatgen import MPRester
-from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar
+from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar, Poscar
+from pymatgen.io.vasp import Vasprun
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
 ###########################################################################
@@ -100,100 +103,87 @@ df_entries
 df_entries.index = range(len(df_entries_ori),len(df_entries_ori) + len(df_entries))
 df_entries # 105 entries
 
-#############################################################################
-# Hubbard U choice
-U_dict = {'Co':3.32, 'Cr':3.7, 'Fe':5.3,'Mn':3.9, 'Mo':4.38, 'Ni':6.2,
-                'V':3.25, 'W':7.17}
-U_elements = list(U_dict.keys())
+df_entries.to_csv('df_entris.csv')
 
 #############################################################################
 
 
-INCAR = Incar.from_file('INCAR_bulk')
-KPOINTS = Kpoints.from_file('KPOINTS_bulk')
-
-with open('bulk_modeling_new.log', 'w') as f:
+with open('bulk_modeling_cont.log', 'w') as f:
     start_time = time.time()
     
-    num_ini = df_entries.index[0]
-    num_fin = df_entries.index[-1]
+    num_ini = 243   # df_entries.index[0]
+    num_fin = 347   # df_entries.index[-1]
 
     for idx in range(num_ini, num_fin):
         mp_id = df_entries['material_id'][idx]
         formula = df_entries['pretty_formula'][idx]
-        struc = df_entries['structure'][idx]
-        INCAR['SYSTEM'] = formula
+ #      struc = df_entries['structure'][idx]
         
         file_path  = '%03d_%s/' % (idx + 1.0, formula)
-        createFolder(file_path)
-     
-        # getting conventional unit cell
-        sga = SpacegroupAnalyzer(struc, symprec = 0.1)
-        conv_struc = sga.get_conventional_standard_structure()
-        conv_struc.to(filename = file_path + 'POSCAR')
+        createFolder(file_path + '2nd')
+      
+        try:
+            # vasprun.xml
+            v = Vasprun(file_path + 'vasprun.xml')
+            print(file_path,' Electronic & ionic converged?: %s' % v.converged)
+            f.writelines([file_path,' Electronic & ionic converged?: %s\n' % v.converged])
 
-        # MAGMOM setting using Exception cases
-        INCAR['MAGMOM'] = [5.0, 5.0, 0.6, 0.6, 0.6]
-        
-        if str(conv_struc.species[0]) in alkali_elements:
-            INCAR['MAGMOM'][0] = 0.6
-        elif str(conv_struc.species[1]) in alkali_elements:
-            INCAR['MAGMOM'][1] = 0.6
+            if v.converged:
+                INCAR = Incar.from_file(file_path + 'INCAR')
+                KPOINTS = Kpoints.from_file(file_path + 'KPOINTS')
+                POSCAR = Poscar.from_file(file_path + 'CONTCAR')
 
-        # Hubbard U setting
-        INCAR['LDAUL'] = [-1, -1, -1]
-        INCAR['LDAUU'] = [0.0, 0.0, 0.0]
-        INCAR['LDAUJ'] = [0.0, 0.0, 0.0]
+                INCAR['IBRION'] = 2
+                INCAR['ISPIN'] = 2
+                INCAR['NSW'] = 200
+                INCAR['ICHARG'] = 1
         
-        elements = [str(element) for element in conv_struc.species][:-2]
+#               INCAR.write_file(file_path + '2nd/INCAR')
+#               KPOINTS.write_file(file_path + '2nd/KPOINTS')
+#               POSCAR.write_file(file_path + '2nd/POSCAR')
         
-        for index, element in enumerate(elements):
-            if element in U_elements:
-                print(file_path)
-                INCAR['LDAU'] = '.TRUE.'
-                INCAR['LDAUL'][index] = 2
-                INCAR['LDAUU'][index] = U_dict[element]
+                # Potcar setup 
+                POTCAR = Potcar.from_file(file_path + 'POTCAR')
+#               POTCAR.write_file(file_path + '2nd/POTCAR')
         
-#        INCAR.write_file('%03d_%s/INCAR' % (idx + 1.0, formula))
-#        KPOINTS.write_file('%03d_%s/KPOINTS' % (idx + 1.0, formula))       
-        
-        # Potcar setup 
-        mp_calc = mpr.get_entry_by_material_id({'material_id': mp_id})
-        mp_potcar_symbols = mp_calc.parameters['potcar_symbols']
-        
-        for i in range(len(mp_potcar_symbols)):
-            mp_potcar_symbols[i] = mp_potcar_symbols[i].replace("PBE ","")
-        if 'W_pv' in mp_potcar_symbols:
-            mp_potcar_symbols[1] = 'W_sv'
-
-        POTCAR = Potcar(mp_potcar_symbols)
-#       POTCAR.write_file(file_path + 'POTCAR')
-        
-#        print('%02d' % (idx + 1.0)," ",formula," ",conv_struc.formula," ",len(conv_struc), " %4.3f %4.3f %4.3f" % (conv_struc.lattice.abc),
-#              " ",mp_potcar_symbols," ",INCAR['LDAUU']," %s" % INCAR['MAGMOM'])
-        f.writelines(['%02d' % (idx + 1.0)," ",formula," ",conv_struc.formula," ",str(len(conv_struc)),
-                      " %4.3f %4.3f %4.3f" % (conv_struc.lattice.abc)," %s" % mp_potcar_symbols,
-                      " %s" % INCAR['LDAUU']," %s\n" % INCAR['MAGMOM']])
-  
-        # jobscript copy
-        for n,line in enumerate(fileinput.FileInput('jobscript_vasp.sh')):
-            if '#PBS -N' in line:
-                n_line = n
-            elif '#PBS -q' in line:
-                q_line = n
+                # jobscript copy
+                for n,line in enumerate(fileinput.FileInput('jobscript_vasp.sh')):
+                    if '#PBS -N' in line:
+                        n_line = n
+                    elif '#PBS -q' in line:
+                        q_line = n
+                    elif '#PBS -l' in line:
+                        w_line = n
             
-        PBS_N = '#PBS -N %03d_%s\n' % (idx + 1.0, formula)
-        replace_line('jobscript_vasp.sh', n_line, PBS_N)
+                PBS_N = '#PBS -N %03d_%s\n' % (idx + 1.0, formula)
+                replace_line('jobscript_vasp.sh', n_line, PBS_N)
         
-        if (idx - num_ini) < 50:
-            queue = 'normal' # Change queue name if required
-        else:
-            queue = 'flat'
-        PBS_q = '#PBS -q %s\n' % (queue)
-        replace_line('jobscript_vasp.sh', q_line, PBS_q)
+                if (idx - num_ini) < 50:
+                    queue = 'normal' # Change queue name if required
+                else:
+                    queue = 'flat'
+                PBS_q = '#PBS -q %s\n' % (queue)
+                replace_line('jobscript_vasp.sh', q_line, PBS_q)
+
+                walltime = '01:00:00'
+                PBS_w = '#PBS -l walltime=%s\n' % (walltime)
+                replace_line('jobscript_vasp.sh', w_line, PBS_w)
         
-        job_file = os.getcwd() + '/jobscript_vasp.sh'
-#       shutil.copy(job_file, file_path)
+                destination = file_path + '2nd/'
+                job_file = os.getcwd() + '/jobscript_vasp.sh'
+                shutil.copy(job_file, destination)
+
+                # CHGCAR copy
+                CHGCAR = file_path + 'CHGCAR'
+                if os.path.exists(file_path + '2nd/CHGCAR'):
+                    print(file_path, 'CHGCAR file already exist!')
+                    f.writelines([file_path, 'CHGCAR file already exist!\n'])
+                else:
+                    shutil.copy(CHGCAR, destination)
+
+        except:
+            print(file_path + 'error!')
+            f.writelines(file_path + 'error!\n')
 
     end_time = time.time()
     f.writelines('Execution time for script (sec) : %6.1f\n' % (end_time - start_time))
