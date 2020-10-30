@@ -278,7 +278,7 @@ with open('results/bulk_analysis.log', 'w') as f:
                     elements.append(element)
 
             struc = Structure.from_file(file_path + 'CONTCAR')
-            df_bulk.structure[idx+1] = struc
+            df_bulk.structure[idx+1] = bulk_opt # use ase.Atoms object
             
             # Asite dataframe
             for Asite_element in Asite_elements:
