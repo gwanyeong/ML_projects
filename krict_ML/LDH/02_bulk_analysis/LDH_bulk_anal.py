@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[23]:
-
 
 # -*- coding: utf-8 -*-
 """
@@ -59,8 +54,8 @@ MATERIAL_API_KEY = os.getenv('MATERIAL_API_KEY')
 mpr = MPRester(MATERIAL_API_KEY)
 
 TM_list = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn']
-#           'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
-#           'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
+           'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
+           'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
 
 LDH_list = []
 for TM in TM_list:
@@ -313,10 +308,4 @@ with open('results/bulk_analysis.log','w') as f:
 
     end_time = time.time()
     f.writelines('Execution time for script (sec) : %6.1f\n' % (end_time - start_time))
-
-
-# In[ ]:
-
-
-
 
