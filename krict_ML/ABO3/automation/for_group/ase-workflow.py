@@ -68,7 +68,7 @@ sorted_entries = sorted(entries, key = lambda e: e['e_above_hull'])
 
 originalPath = os.getcwd()
 
-for idx, entry in enumerate(sorted_entries):
+for idx, entry in enumerate(sorted_entries): # Change sorted_entries -> test_entries for test purp.
     formula = entry['pretty_formula']
 
     createFolder(originalPath + '/%02d_%s' % (idx + 1, formula))
