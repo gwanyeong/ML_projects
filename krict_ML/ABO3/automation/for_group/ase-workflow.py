@@ -39,10 +39,6 @@ TM_list = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
            'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
            'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
 
-alkali_elements = ['Sr', 'Ba', 'K', 'Na', 'Li', 'Rb', 'Cs', 'Be', 'Mg',
-                   'Ca', 'Ba', 'Si']
-
-
 ##############################################################################
 # Hubbard U choice
 U_dict = {'Co':3.32, 'Cr':3.7, 'Fe':5.3,'Mn':3.9, 'Mo':4.38, 'Ni':6.2,
