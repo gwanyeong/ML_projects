@@ -33,7 +33,7 @@ def createFolder(directory):
 
 ##############################################################################
 
-MATERIAL_API_KEY = 'mwEnJkSB9Cusgdf1'
+MATERIAL_API_KEY = 'your_API_key'
 mpr = MPRester(MATERIAL_API_KEY)
 
 TM_list = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
