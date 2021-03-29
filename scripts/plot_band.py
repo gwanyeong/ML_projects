@@ -89,7 +89,7 @@ plt.savefig('plots/brillouin_fig.pdf')
 
 
 """
-Another plot type
+# Another plot type
 
 bsplot_proj = BSPlotterProjected(bs)
 bsplot_proj.get_elt_projected_plots(vbm_cbm_marker = True)
@@ -99,7 +99,7 @@ bsplot_proj.get_elt_projected_plots(vbm_cbm_marker = True)
 
 
 """
-# getting raw data for specific bands & kpts
+# Getting raw data for specific bands & kpts
 
 from pymatgen import Spin
 
