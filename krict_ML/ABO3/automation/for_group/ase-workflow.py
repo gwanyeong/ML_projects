@@ -6,7 +6,6 @@ Created on Sat Mar 27 15:03:45 2021
 """
 import time
 import os
-# import pandas as pd
 import shutil
 
 from pymatgen.ext.matproj import MPRester
@@ -135,7 +134,6 @@ for idx, entry in enumerate(sorted_entries):
     print("%02d_%s: band structure calc." % (idx + 1, formula))
     createFolder('bands')
     shutil.copy('2nd/CHGCAR','bands/')
-#   shutil.copy('../KPOINTS','bands/')
   # kpath = bandpath(path = 'GXMGRXMR',cell = model.cell, npoints = 10)
     kpts = {'path':'GXMGRXMR', 'npoints':60}
     calc.set(nsw = 0, isym = -1, ibrion = -1, isif = 2, directory = 'bands', icharg = 11,
