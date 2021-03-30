@@ -10,7 +10,6 @@ import os
 import shutil
 
 from pymatgen.ext.matproj import MPRester
-# from pymatgen.io.vasp.inputs import Incar, Kpoints, Potcar
 from pymatgen.io.cif import CifWriter
 from pymatgen.io.vasp import Vasprun
 
@@ -39,8 +38,7 @@ def check_convergence(directory):
         print('Error: not converging !!')
 
 ##############################################################################
-
-MATERIAL_API_KEY = 'mwEnJkSB9Cusgdf1'
+MATERIAL_API_KEY = 'your_API_key'
 mpr = MPRester(MATERIAL_API_KEY)
 
 TM_list = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
@@ -73,15 +71,13 @@ sorted_entries = sorted(entries, key = lambda e: e['e_above_hull'])
 # test_entries = sorted_entries[:10]
 
 ##############################################################################
-
 originalPath = os.getcwd()
 createFolder('plots')
 
-for idx, entry in enumerate(sorted_entries):
+for idx, entry in enumerate(sorted_entries): # Change 'sorted_entries' to 'test_entries' for test purpose!
     start_time = time.time()
 
     formula = entry['pretty_formula']
-
     createFolder(originalPath + '/%03d_%s' % (idx + 1, formula))
     os.chdir(originalPath + '/%03d_%s' % (idx + 1, formula))
     print(os.getcwd())
@@ -183,4 +179,3 @@ for idx, entry in enumerate(sorted_entries):
 
 final_time = time.time()
 print('Execution time for script (sec) : %6.1f\n' % (final_time - initial_time))
-
