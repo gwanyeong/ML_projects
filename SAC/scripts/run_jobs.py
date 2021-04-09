@@ -40,7 +40,7 @@ def replace_jobscripts(filename, label, model_type, queue):
     PBS_q = '#PBS -q %s\n' % (queue)
     replace_line(filename, q_line, PBS_q)
     
-    command = '/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python test.py >> logs/stdout_%s\n' % (label)
+    command = '/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python main.py >> logs/stdout_%s\n' % (label)
     replace_line(filename, j_line, command)
 
 ##############################################################################
@@ -50,7 +50,7 @@ job_list = [['Sc','Ti'],['V'],['Cr'],['Mn'],['Fe'],['Co'],['Ni'],['Cu','Zn']]
 for idx, job in enumerate(job_list):
     TM = ''.join(job_list[idx])
     
-    replace_elements('test.py',job)
+    replace_elements('main.py',job)
     replace_jobscripts('jobscript_ase.sh',TM, 'svn3','flat')
     
     os.system('qsub jobscript_ase.sh')
