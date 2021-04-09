@@ -11,7 +11,5 @@
 
 cd $PBS_O_WORKDIR
 
-/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python test.py >> logs/stdout_CuZn
-
-# $ASE_VASP_COMMAND 
+/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python main.py >> logs/stdout_CuZn
 
