@@ -104,7 +104,8 @@ for idx, TM in enumerate(TM_elements):
     
         formula = TM + '_svn3'
         model = read(originalPath + '/models/svn3_ini.cif')
-        model[24].symbol = TM
+        
+        model[24].symbol = TM  # Change '24' to '-1' for dv-models !
         model = sort(model)
         write(filename = originalPath + '/models/%02d_%s.cif' % (idx + 1, formula), images = model)
 
