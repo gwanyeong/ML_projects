@@ -72,11 +72,11 @@ TM_elements = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
                'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
                'La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
 
-NUPD_0 = ['Sc','Zn','Y','Cd','La','Hg']
-NUPD_1 = ['Ti','Cu','Zr','Ag','Hf','Au']
-NUPD_2 = ['V','Ni','Nb','Pd','Ta','Pt']
-NUPD_3 = ['Cr','Co','Mo','Rh','W','Ir']
-NUPD_4 = ['Mn','Fe','Tc','Ru','Re','Os']
+NUPD_0 = ['Sc','Zn','Y','Cd','La','Hg']  # d1, d10
+NUPD_1 = ['Ti','Cu','Zr','Ag','Hf','Au'] # d2, d9
+NUPD_2 = ['V','Ni','Nb','Pd','Ta','Pt']  # d3, d8
+NUPD_3 = ['Cr','Co','Mo','Rh','W','Ir']  # d4, d7
+NUPD_4 = ['Mn','Fe','Tc','Ru','Re','Os'] # d5, d6
 
 NUPD_dict = {}
 for TM in TM_elements:
