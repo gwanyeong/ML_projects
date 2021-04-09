@@ -7,6 +7,15 @@ Created on Fri Apr  9 15:00:05 2021
 
 import os
 import fileinput
+import shutil
+
+##############################################################################
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print('Error: Creating directory. ' + directory)
 
 ##############################################################################
 def replace_line(file_name, line_num, text):
@@ -40,18 +49,19 @@ def replace_jobscripts(filename, label, model_type, queue):
     PBS_q = '#PBS -q %s\n' % (queue)
     replace_line(filename, q_line, PBS_q)
     
-    command = '/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python main.py >> logs/stdout_%s\n' % (label)
+    command = '/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python jobs/calc_%s.py >> logs/stdout_%s\n' % (label, label)
     replace_line(filename, j_line, command)
 
 ##############################################################################
 
 job_list = [['Sc','Ti'],['V'],['Cr'],['Mn'],['Fe'],['Co'],['Ni'],['Cu','Zn']]
 
+createFolder('jobs')
 for idx, job in enumerate(job_list):
     TM = ''.join(job_list[idx])
     
     replace_elements('main.py',job)
-    replace_jobscripts('jobscript_ase.sh',TM, 'svn3','flat')
+    shutil.copy('main.py', 'jobs/calc_%s.py' % TM)
+    replace_jobscripts(filename = 'jobscript_ase.sh',label = TM, model_type = 'dvc4', queue = 'normal')
     
     os.system('qsub jobscript_ase.sh')
-
