@@ -39,13 +39,11 @@ def check_convergence(directory):
 
 ##############################################################################
 def VaspFatalError(directory):
+    check_err = False
     for n, line in enumerate(fileinput.FileInput(directory + 'vasp.out')):
         if 'ZBRENT: fatal error in bracketing' in line:
             print("    Restart calc. - %s" % line)
             check_err = True
-        else:
-            check_err = False
-
     return check_err
 
 ##############################################################################
