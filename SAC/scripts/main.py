@@ -207,7 +207,7 @@ for idx, TM in enumerate(TM_elements):
                 print("        %s: Unknown Error!!" % target_direc)
                 continue
 
-            # Spin-polarized Geop(2nd)
+            # Spin-polarized Geop(NUPD_free)
             print('    %02d_%s:geop_nupd_X' % (idx + 1, formula))
             createFolder('NUPD/opt_%d/relax' % nupd)
             model_cont = read(target_direc + 'CONTCAR')
