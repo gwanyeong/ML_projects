@@ -26,12 +26,17 @@ def replace_line(file_name, line_num, text):
     out.close()
    
 ##############################################################################
-def replace_elements(filename, elements):
+def replace_model(filename, elements, model_type):
     for n, line in enumerate(fileinput.FileInput(filename)):
         if 'target_elements = ' in line:
             n_line = n
-    new_line = 'target_elements = %s\n' % elements
-    replace_line(filename,n_line, new_line)
+        elif 'model_type = ' in line:
+            m_line = n
+    new_el_line = 'target_elements = %s\n' % elements
+    replace_line(filename, n_line, new_el_line)
+
+    new_model_line = "model_type = '%s'\n" % model_type
+    replace_line(filename, m_line, new_model_line)
     
 ##############################################################################
 def replace_jobscripts(filename, label, model_type, queue):
@@ -53,15 +58,15 @@ def replace_jobscripts(filename, label, model_type, queue):
     replace_line(filename, j_line, command)
 
 ##############################################################################
-
 job_list = [['Sc','Ti'],['V'],['Cr'],['Mn'],['Fe'],['Co'],['Ni'],['Cu','Zn']]
 
+createFolder('logs')
 createFolder('jobs')
-for idx, job in enumerate(job_list):
+for idx, els in enumerate(job_list):
     TM = ''.join(job_list[idx])
     
-    replace_elements('main.py',job)
+    replace_model(filename = 'main.py', elements = els, model_type = 'dvn4')
     shutil.copy('main.py', 'jobs/calc_%s.py' % TM)
-    replace_jobscripts(filename = 'jobscript_ase.sh',label = TM, model_type = 'dvc4', queue = 'normal')
+    replace_jobscripts(filename = 'jobscript_ase.sh', label = TM, model_type = 'dvn4', queue = 'flat')
     
     os.system('qsub jobscript_ase.sh')
