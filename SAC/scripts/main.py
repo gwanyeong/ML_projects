@@ -104,6 +104,7 @@ for TM in TM_elements:
 initial_time = time.time()
 originalPath = os.getcwd()
 
+# Input parameters
 target_elements = ['Cu', 'Zn']
 model_type = 'svc3'
 
