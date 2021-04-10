@@ -191,20 +191,20 @@ for idx, TM in enumerate(TM_elements):
 
                 convg_check = check_convergence(target_direc)
                 if convg_check:
-                    print('    %s: converged' % target_direc)
+                    print('        %s: converged' % target_direc)
                     break
                 elif convg_check == 'Unknown':
                     if VaspFatalError(target_direc):
                         (energy, magm) = recalculation(direc, i)
                     else:
-                       print("    Unknown Error!!") 
+                       print("        Unknown Error!!") 
                        unknown_error = True
                        break
                 elif convg_check is False:
-                    print('   %s: not converged within given ionic steps' % target_direc)
+                    print('       %s: not converged within given ionic steps' % target_direc)
                     (energy, magm) = recalculation(direc, i, copy_chgcar = True)
             if unknown_error:
-                print("    %s: Unknown Error!!" % target_direc)
+                print("        %s: Unknown Error!!" % target_direc)
                 continue
 
             # Spin-polarized Geop(2nd)
@@ -230,7 +230,7 @@ for idx, TM in enumerate(TM_elements):
 
                 convg_check = check_convergence(target_direc_cnt)
                 if convg_check:
-                    print('    %s: converged' % target_direc_cnt)
+                    print('        %s: converged' % target_direc_cnt)
                     break
                 elif convg_check == 'Unknown':
                     if VaspFatalError(target_direc_cnt):
@@ -239,14 +239,14 @@ for idx, TM in enumerate(TM_elements):
                        unknown_error_cnt = True
                        break
                 elif convg_check is False:
-                    print('   %s: not converged within given ionic steps' % target_direc_cnt)
+                    print('       %s: not converged within given ionic steps' % target_direc_cnt)
                     (energy, magm) = recalculation(direc_cnt, j, copy_chgcar = True)
             if unknown_error_cnt:
-                print("    %s: Unknown Error!!\n" % target_direc_cnt)
+                print("        %s: Unknown Error!!\n" % target_direc_cnt)
                 continue
 
             end_time = time.time()
-            print('    Calc. time(sec): %6.1f\n' % (end_time - start_time))
+            print('    Calculation time(sec): %6.1f\n' % (end_time - start_time))
 
 final_time = time.time()
 print('Execution time for script (sec) : %6.1f' % (final_time - initial_time))
