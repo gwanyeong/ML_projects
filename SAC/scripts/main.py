@@ -10,10 +10,9 @@ import time
 import shutil
 import fileinput
 
-from ase import Atom
 from ase.io import read, write
 from ase.visualize import view
-from ase.build import make_supercell, sort
+from ase.build import sort
 from ase.calculators.vasp import Vasp
 
 from pymatgen.io.vasp.outputs import Vasprun
@@ -39,25 +38,35 @@ def check_convergence(directory):
     return check_results
 
 ##############################################################################
-def recalculation(directory, n_iter):
-    current_path = os.getcwd()
+def VaspFatalError(directory):
     for n, line in enumerate(fileinput.FileInput(directory + 'vasp.out')):
         if 'ZBRENT: fatal error in bracketing' in line:
-            print("    %s - restart calc.!" % line)
-            os.chdir(directory)
-            
-            direc_tmp = 'cont%d' % n_iter
-            createFolder(direc_tmp)
-            calc = Vasp(restart = True)
-            atoms = calc.get_atoms()
-            calc.set(ispin = 2, directory = direc_tmp)
-            atoms.calc = calc
-            try:
-                energy = atoms.get_potential_energy()
-                magmom = atoms.get_magnetic_moments()
-            except:
-                energy = magmom = None
-            os.chdir(current_path)
+            print("    Restart calc. - %s" % line)
+            check_err = True
+        else:
+            check_err = False
+
+    return check_err
+
+##############################################################################
+def recalculation(directory, n_iter, copy_chgcar = False):
+    current_path = os.getcwd()
+    os.chdir(directory)
+    direc_tmp = 'cont%d' % n_iter
+    createFolder(direc_tmp)
+
+    if copy_chgcar:
+        shutil.copy('CHGCAR', direc_tmp + '/')
+    calc_tmp = Vasp(restart = True)
+    atoms = calc_tmp.get_atoms()
+    calc_tmp.set(ispin = 2, directory = direc_tmp)
+    atoms.calc = calc_tmp
+    try:
+        energy = atoms.get_potential_energy()
+        magmom = atoms.get_magnetic_moments()
+    except:
+        energy = magmom = None
+    os.chdir(current_path)
 
     return energy, magmom
 
@@ -66,17 +75,18 @@ def recalculation(directory, n_iter):
 U_dict = {'Co':3.32, 'Cr':3.7, 'Fe':5.3,'Mn':3.9, 'Mo':4.38, 'Ni':6.2,
           'V':3.25, 'W':7.17}
 U_elements = list(U_dict.keys())
+
 ##############################################################################
 # NUPD_dictionary
 TM_elements = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
                'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
                'La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
 
-NUPD_0 = ['Sc','Zn','Y','Cd','La','Hg']  # d1, d10
-NUPD_1 = ['Ti','Cu','Zr','Ag','Hf','Au'] # d2, d9
-NUPD_2 = ['V','Ni','Nb','Pd','Ta','Pt']  # d3, d8
-NUPD_3 = ['Cr','Co','Mo','Rh','W','Ir']  # d4, d7
-NUPD_4 = ['Mn','Fe','Tc','Ru','Re','Os'] # d5, d6
+NUPD_0 = ['Sc','Zn','Y','Cd','La','Hg']
+NUPD_1 = ['Ti','Cu','Zr','Ag','Hf','Au']
+NUPD_2 = ['V','Ni','Nb','Pd','Ta','Pt']
+NUPD_3 = ['Cr','Co','Mo','Rh','W','Ir']
+NUPD_4 = ['Mn','Fe','Tc','Ru','Re','Os']
 
 NUPD_dict = {}
 for TM in TM_elements:
@@ -97,15 +107,19 @@ initial_time = time.time()
 originalPath = os.getcwd()
 
 target_elements = ['Cu', 'Zn']
+model_type = 'svc3'
 
-# Modeling
 for idx, TM in enumerate(TM_elements):
     if TM in target_elements:
     
-        formula = TM + '_svn3'
-        model = read(originalPath + '/models/svn3_ini.cif')
-        
-        model[24].symbol = TM  # Change '24' to '-1' for dv-models !
+        formula = TM + '_' + model_type
+        model = read(originalPath + '/models/%s_ini.cif' % model_type)
+
+        # Modeling
+        if model_type.startswith('dv'):
+            model[-1].symbol = TM
+        elif model_type.startswith('sv'):
+            model[24].symbol = TM
         model = sort(model)
         write(filename = originalPath + '/models/%02d_%s.cif' % (idx + 1, formula), images = model)
 
@@ -123,7 +137,7 @@ for idx, TM in enumerate(TM_elements):
                 ldau_luj[el] = {'L':2, 'U':U_dict[el], 'J':0}
                 ldau = True
 
-        calc = Vasp(kpts=(6,5,1), system = formula,
+        calc = Vasp(kpts=(6,5,1), system = formula, idipol = 3, lmaxmix = 4, 
                     xc = 'rpbe', istart = 0, icharg = 1, encut = 520, 
                     ediff = 1e-06, algo = 'fast', # lreal = False
                     ismear = -5, sigma = 0.05, lorbit = 11, 
@@ -170,19 +184,30 @@ for idx, TM in enumerate(TM_elements):
 
             # Error check -> restart
             for i in range(1,5):
+                direc = 'NUPD/opt_%d/' % nupd
                 if i == 1:
-                    direc = 'NUPD/opt_%d/' % nupd
-                else:
-                    direc = 'NUPD/opt_%d/cont%d/' % (nupd, i-1)
-
-                if check_convergence(direc) == 'Unknown':
-                    (energy, magm) = recalculation(direc, i)
-                    target_direc = 'NUPD/opt_%d/cont%d/' % (nupd, i)
-                elif check_convergence(direc):
-                    print('    %s: converged' % direc)
                     target_direc = direc
+                else:
+                    target_direc = direc + 'cont%d/' % (i-1)
+
+                convg_check = check_convergence(target_direc)
+                if convg_check:
+                    print('    %s: converged' % target_direc)
                     break
-            
+                elif convg_check == 'Unknown':
+                    if VaspFatalError(target_direc):
+                        (energy, magm) = recalculation(direc, i)
+                    else:
+                       print("    Unknown Error!!") 
+                       unknown_error = True
+                       break
+                elif convg_check is False:
+                    print('   %s: not converged within given ionic steps' % target_direc)
+                    (energy, magm) = recalculation(direc, i, copy_chgcar = True)
+            if unknown_error:
+                print("    %s: Unknown Error!!" % target_direc)
+                continue
+
             # Spin-polarized Geop(2nd)
             print('    %02d_%s:geop_nupd_X' % (idx + 1, formula))
             createFolder('NUPD/opt_%d/relax' % nupd)
@@ -198,19 +223,31 @@ for idx, TM in enumerate(TM_elements):
 
             # Error check(2nd) -> restart
             for j in range(1,5):
+                direc_cnt = 'NUPD/opt_%d/relax/' % nupd
                 if j == 1:
-                    direc_cnt = 'NUPD/opt_%d/relax/' % nupd
+                    target_direc_cnt = direc_cnt
                 else:
-                    direc_cnt = 'NUPD/opt_%d/relax/cont%d/' % (nupd, j-1)
+                    target_direc_cnt = direc_cnt + 'cont%d/' % (j-1)
 
-                if check_convergence(direc_cnt) == 'Unknown':
-                    (energy, magm) = recalculation(direc_cnt, j)
-                elif check_convergence(direc_cnt):
-                    print('    %s: converged' % direc_cnt)
+                convg_check = check_convergence(target_direc_cnt)
+                if convg_check:
+                    print('    %s: converged' % target_direc_cnt)
                     break
+                elif convg_check == 'Unknown':
+                    if VaspFatalError(target_direc_cnt):
+                        (energy, magm) = recalculation(direc_cnt, j)
+                    else:
+                       unknown_error_cnt = True
+                       break
+                elif convg_check is False:
+                    print('   %s: not converged within given ionic steps' % target_direc_cnt)
+                    (energy, magm) = recalculation(direc_cnt, j, copy_chgcar = True)
+            if unknown_error_cnt:
+                print("    %s: Unknown Error!!\n" % target_direc_cnt)
+                continue
 
             end_time = time.time()
-            print('      Calc. time(sec): %6.1f' % (end_time - start_time))
+            print('    Calc. time(sec): %6.1f\n' % (end_time - start_time))
 
 final_time = time.time()
 print('Execution time for script (sec) : %6.1f' % (final_time - initial_time))
