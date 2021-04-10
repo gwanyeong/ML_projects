@@ -182,6 +182,7 @@ for idx, TM in enumerate(TM_elements):
                 print('    Unknown error:%02d_%s_opt' % (idx + 1, formula))
 
             # Error check -> restart
+            unknown_error = None
             for i in range(1,5):
                 direc = 'NUPD/opt_%d/' % nupd
                 if i == 1:
@@ -236,12 +237,12 @@ for idx, TM in enumerate(TM_elements):
                     if VaspFatalError(target_direc_cnt):
                         (energy, magm) = recalculation(direc_cnt, j)
                     else:
-                       unknown_error_cnt = True
+                       unknown_error = True
                        break
                 elif convg_check is False:
                     print('       %s: not converged within given ionic steps' % target_direc_cnt)
                     (energy, magm) = recalculation(direc_cnt, j, copy_chgcar = True)
-            if unknown_error_cnt:
+            if unknown_error:
                 print("        %s: Unknown Error!!\n" % target_direc_cnt)
                 continue
 
