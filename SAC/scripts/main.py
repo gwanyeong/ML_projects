@@ -78,9 +78,9 @@ U_elements = list(U_dict.keys())
 # NUPD_dictionary
 TM_elements = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn',
                'Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd',
-               'La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
+               'Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg']
 
-NUPD_0 = ['Sc','Zn','Y','Cd','La','Hg']
+NUPD_0 = ['Sc','Zn','Y','Cd','Lu','Hg']
 NUPD_1 = ['Ti','Cu','Zr','Ag','Hf','Au']
 NUPD_2 = ['V','Ni','Nb','Pd','Ta','Pt']
 NUPD_3 = ['Cr','Co','Mo','Rh','W','Ir']
@@ -105,8 +105,8 @@ initial_time = time.time()
 originalPath = os.getcwd()
 
 # Input parameters
-target_elements = ['Cu', 'Zn']
-model_type = 'svc3'
+target_elements = ['Cr']
+model_type = 'dvc4'
 
 for idx, TM in enumerate(TM_elements):
     if TM in target_elements:
@@ -136,7 +136,7 @@ for idx, TM in enumerate(TM_elements):
                 ldau_luj[el] = {'L':2, 'U':U_dict[el], 'J':0}
                 ldau = True
 
-        calc = Vasp(kpts=(6,5,1), system = formula, idipol = 3, lmaxmix = 4, 
+        calc = Vasp(kpts=(6,5,1), system = formula, idipol = 3, lmaxmix = 4, gamma = True,
                     xc = 'rpbe', istart = 0, icharg = 1, encut = 520, 
                     ediff = 1e-06, algo = 'fast', # lreal = False
                     ismear = -5, sigma = 0.05, lorbit = 11, 
@@ -191,7 +191,7 @@ for idx, TM in enumerate(TM_elements):
                     target_direc = direc + 'cont%d/' % (i-1)
 
                 convg_check = check_convergence(target_direc)
-                if convg_check:
+                if convg_check is True:
                     print('        %s: converged' % target_direc)
                     break
                 elif convg_check == 'Unknown':
@@ -204,16 +204,16 @@ for idx, TM in enumerate(TM_elements):
                 elif convg_check is False:
                     print('       %s: not converged within given ionic steps' % target_direc)
                     (energy, magm) = recalculation(direc, i, copy_chgcar = True)
-            if unknown_error:
+            if unknown_error is True:
                 print("        %s: Unknown Error!!" % target_direc)
                 continue
 
-            # Spin-polarized Geop(NUPD_free)
+            # Spin-polarized Geop(2nd)
             print('    %02d_%s:geop_nupd_X' % (idx + 1, formula))
             createFolder('NUPD/opt_%d/relax' % nupd)
             model_cont = read(target_direc + 'CONTCAR')
             shutil.copy(target_direc + 'CHGCAR', 'NUPD/opt_%d/relax/' % nupd)
-            calc.set(nupdown = -1, directory = 'NUPD/opt_%d/relax/' % nupd)
+            calc.set(nupdown = -1, isym = 0, directory = 'NUPD/opt_%d/relax/' % nupd)  # Turn off symmetry to avoid the error
             model_cont.set_initial_magnetic_moments(magmoms = magm)
             model_cont.calc = calc
             try:
@@ -230,7 +230,7 @@ for idx, TM in enumerate(TM_elements):
                     target_direc_cnt = direc_cnt + 'cont%d/' % (j-1)
 
                 convg_check = check_convergence(target_direc_cnt)
-                if convg_check:
+                if convg_check is True:
                     print('        %s: converged' % target_direc_cnt)
                     break
                 elif convg_check == 'Unknown':
@@ -242,9 +242,22 @@ for idx, TM in enumerate(TM_elements):
                 elif convg_check is False:
                     print('       %s: not converged within given ionic steps' % target_direc_cnt)
                     (energy, magm) = recalculation(direc_cnt, j, copy_chgcar = True)
-            if unknown_error:
+            if unknown_error is True:
                 print("        %s: Unknown Error!!\n" % target_direc_cnt)
                 continue
+
+            # Spin-polarzied SPE(3rd)
+            print('    %02d_%s:SPE_nupd_X_fin' % (idx + 1, formula))
+            createFolder('NUPD/opt_%d/relax/fin' % nupd)
+            model_fin = read(target_direc_cnt + 'CONTCAR')
+            model_fin.center(vacuum = 10, axis = 2)
+            calc.set(nsw = 0, directory = 'NUPD/opt_%d/relax/fin/' % nupd)
+            model_fin.set_initial_magnetic_moments(magmoms = magm)
+            model_fin.calc = calc
+            try:
+                model_fin.get_potential_energy()
+            except:
+                print('    Unknown error:%02d_%s_fin' % (idx + 1, formula))
 
             end_time = time.time()
             print('    Calculation time(sec): %6.1f\n' % (end_time - start_time))
