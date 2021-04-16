@@ -48,25 +48,37 @@ def replace_jobscripts(filename, label, model_type, queue):
         elif '/scratch/x2045a01/' in line:
             j_line = n
             
-    PBS_N = '#PBS -N %s_%s\n' % (model_type, label)
+    PBS_N = '#PBS -N %s_%s_cnt\n' % (model_type, label)
     replace_line(filename, n_line, PBS_N)
     
     PBS_q = '#PBS -q %s\n' % (queue)
     replace_line(filename, q_line, PBS_q)
-    
-    command = '/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python jobs/calc_%s.py >> logs/stdout_%s\n' % (label, label)
+
+    command = '/scratch/x2045a01/anaconda3/envs/cgcnn/bin/python jobs/calc_%s_cnt.py >> logs/stdout_%s_cnt\n' % (label, label)
     replace_line(filename, j_line, command)
 
 ##############################################################################
-job_list = [['Sc','Ti'],['V'],['Cr'],['Mn'],['Fe'],['Co'],['Ni'],['Cu','Zn']]
+
+# 3d TMs
+# job_list = [['Sc','Ti'],['V'],['Cr'],['Mn'],['Fe'],['Co'],['Ni'],['Cu','Zn']]
+
+# 4d TMs
+job_list = [['Y','Zr'],['Nb'],['Mo'],['Tc'],['Ru'],['Rh'],['Pd'],['Ag','Cd']]
+
+# 5d TMs
+# job_list = [['Lu','Hf'],['Ta'],['W'],['Re'],['Os'],['Ir'],['Pt'],['Au','Hg']]
+
+
+# filename = 'main.py'
+filename = 'calculate_cont.py'
 
 createFolder('logs')
 createFolder('jobs')
 for idx, els in enumerate(job_list):
     TM = ''.join(job_list[idx])
     
-    replace_model(filename = 'main.py', elements = els, model_type = 'dvn4')
-    shutil.copy('main.py', 'jobs/calc_%s.py' % TM)
+    replace_model(filename = filename, elements = els, model_type = 'dvn4')
+    shutil.copy(filename, 'jobs/calc_%s_cnt.py' % TM)
     replace_jobscripts(filename = 'jobscript_ase.sh', label = TM, model_type = 'dvn4', queue = 'flat')
     
     os.system('qsub jobscript_ase.sh')
