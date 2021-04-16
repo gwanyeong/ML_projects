@@ -105,8 +105,8 @@ initial_time = time.time()
 originalPath = os.getcwd()
 
 # Input parameters
-target_elements = ['Cr']
-model_type = 'dvc4'
+target_elements = ['Au', 'Hg']
+model_type = 'dvn4'
 
 for idx, TM in enumerate(TM_elements):
     if TM in target_elements:
@@ -138,7 +138,7 @@ for idx, TM in enumerate(TM_elements):
 
         calc = Vasp(kpts=(6,5,1), system = formula, idipol = 3, lmaxmix = 4, gamma = True,
                     xc = 'rpbe', istart = 0, icharg = 1, encut = 520, 
-                    ediff = 1e-06, algo = 'fast', # lreal = False
+                    ediff = 1e-06, algo = 'fast', nelm = 200, nelmdl = -12, # lreal = False
                     ismear = -5, sigma = 0.05, lorbit = 11, 
                     npar = 16, lplane = True, ncore = 16, ldau = ldau, ldau_luj = ldau_luj)    
     
@@ -251,7 +251,7 @@ for idx, TM in enumerate(TM_elements):
             createFolder('NUPD/opt_%d/relax/fin' % nupd)
             model_fin = read(target_direc_cnt + 'CONTCAR')
             model_fin.center(vacuum = 10, axis = 2)
-            calc.set(nsw = 0, directory = 'NUPD/opt_%d/relax/fin/' % nupd)
+            calc.set(isif = 2, directory = 'NUPD/opt_%d/relax/fin/' % nupd)
             model_fin.set_initial_magnetic_moments(magmoms = magm)
             model_fin.calc = calc
             try:
