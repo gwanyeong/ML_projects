@@ -137,12 +137,12 @@ for idx in range(num_ini,num_fin):
     magmoms = [mag_dict[el] for el in elements]
 
     # Spin-polar Geop(1st)
-    calc = Vasp(kpts = (4,4,1), system = formula, xc = 'pbe', lmaxmix = 4,
-                istart = 0, icharg = 1, encut = 520, ediff = 2e-06, ediffg = -0.02,
-               ispin = 2, ibrion = 2, idipol = 3, isif = 2, isym = 0, ismear = 0,
-               algo = 'fast', nelm = 500, nelmdl = -12, prec = 'accurate', sigma = 0.05,
-               lorbit = 11, npar = 16, lplane = True, ncore = 16, lreal = False, nsw = 200,
-               ldau = ldau, ldau_luj = ldau_luj, directory = file_path + 'surface')
+    calc = Vasp(kpts = (4,4,1), system = formula, xc = 'pbe', setups={'base':'materialsproject','W':'_sv'},
+                lmaxmix = 4, istart = 0, icharg = 1, encut = 520, ediff = 2e-06, ediffg = -0.02,
+                ispin = 2, ibrion = 2, idipol = 3, isif = 2, isym = 0, ismear = 0,
+                algo = 'fast', nelm = 500, nelmdl = -12, prec = 'accurate', sigma = 0.05,
+                lorbit = 11, npar = 16, lplane = True, ncore = 16, lreal = False, nsw = 200,
+                ldau = ldau, ldau_luj = ldau_luj, directory = file_path + 'surface')
     
     model.set_initial_magnetic_moments(magmoms = magmoms)
     model.calc = calc
