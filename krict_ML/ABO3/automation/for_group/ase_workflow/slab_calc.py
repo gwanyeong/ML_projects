@@ -159,8 +159,8 @@ for idx in range(num_ini,num_fin):
     model_cnt = calc.get_atoms()
     shutil.copy(file_path + 'surface/CHGCAR', file_path + 'surface/2nd/')
     calc.set(ispin = 2, directory = file_path + 'surface/2nd')
-    model_cnt.set_initial_magnetic_moments(magmoms = magm)
     model_cnt.calc = calc
+    model_cnt.set_initial_magnetic_moments(magmoms = magm)
     try:
         model_cnt.get_potential_energy()
     except:
