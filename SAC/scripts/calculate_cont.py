@@ -202,7 +202,7 @@ for idx, TM in enumerate(TM_elements):
                 model_1 = calc_1.get_atoms()
                 magm_1 = model_1.get_magnetic_moments()
                 set_vacuum(model_1, TM)
-                calc_1.set(isif = 2, magmom = magm_1, nelmdl = -12, gamma = True, isym = 2, directory = path_1_fin)
+                calc_1.set(isif = 2, magmom = magm_1, directory = path_1_fin) # nelmdl = -12, gamma = True, isym = 2,
                 model_1.calc = calc_1
 
                 convg_check_1_fin = check_convergence(path_1_fin)
@@ -252,7 +252,7 @@ for idx, TM in enumerate(TM_elements):
                 model_2 = calc_2.get_atoms()
                 magm_2 = model_2.get_magnetic_moments()
                 set_vacuum(model_2, TM)
-                calc_2.set(isif = 2, magmom = magm_2, nelmdl = -12, gamma = True, isym = 2, directory = path_2_fin)
+                calc_2.set(isif = 2, magmom = magm_2, directory = path_2_fin) # nelmdl = -12, gamma = True, isym = 2, 
                 model_2.calc = calc_2
               
                 convg_check_2_fin = check_convergence(path_2_fin)
