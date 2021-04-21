@@ -12,6 +12,10 @@ import fileinput
 import warnings
 warnings.filterwarnings('ignore')
 
+import numpy as np
+import pandas as pd
+
+from ase.io import read
 from ase.calculators.vasp import Vasp
 from pymatgen.io.vasp.outputs import Vasprun
 
@@ -36,21 +40,14 @@ def set_vacuum(model, TM):
 ##############################################################################
 def check_convergence(directory):
     try:
-        path = directory
-        for i in range(1,5):
-            if os.path.exists(directory + 'cont%d/' % i):
-                path = directory + 'cont%d/' % i
-        if os.path.exists(directory + 'tmp/'):
-            path = directory + 'tmp/'
-        v = Vasprun(path + 'vasprun.xml')
-
+        v = Vasprun(directory + 'vasprun.xml')
         if v.converged is True:
             check_results = True
         else:
             check_results = False
     except:
         check_results = 'Unknown'
-    return path, check_results
+    return check_results
 
 ##############################################################################
 def VaspFatalError(directory):
@@ -62,20 +59,17 @@ def VaspFatalError(directory):
     return check_err
 
 ##############################################################################
-def recalculation(directory, copy_chgcar = False):
-    current_path = os.getcwd()
-    if os.path.exists(directory + 'tmp'):
-        read_path = write_path = directory + 'tmp/'
-    else:
-        createFolder(directory + 'tmp')
-        if copy_chgcar is True:
-            shutil.copy(directory + 'CHGCAR', directory + 'tmp/')
-        read_path = directory
-        write_path = directory + 'tmp/'
-    os.chdir(read_path)
-    calc_tmp = Vasp(restart = True, gamma = True)
+def recalculation(directory, i, copy_chgcar = False):
+    current_path = os.getcwd() # 'NUPD/opt_%d/' % nupd
+    os.chdir(directory)
+    direc_tmp = 'cont%d' % (i)
+    createFolder(direc_tmp)
+
+    if copy_chgcar is True:
+        shutil.copy('CHGCAR', direc_tmp + '/')
+    calc_tmp = Vasp(restart = True)  # 
     atoms = calc_tmp.get_atoms()
-    calc_tmp.set(ispin = 2, directory = write_path)
+    calc_tmp.set(ispin = 2, directory = direc_tmp)
     atoms.calc = calc_tmp
     try:
         energy = atoms.get_potential_energy()
@@ -85,6 +79,36 @@ def recalculation(directory, copy_chgcar = False):
     os.chdir(current_path)
 
     return energy, magmom
+
+##############################################################################
+def recalculation_loop(directory, n_iter):
+    unknown_error = None
+    for i in range(1, n_iter + 1):
+        if i == 1:
+            target_path = directory # 'NUPD/opt_%d/' % nupd
+        else:
+            target_path = directory + 'cont%d/' % (i-1)
+
+        convg_check = check_convergence(target_path)
+        if convg_check is True:
+            print('    %s: converged' % target_path)
+            calc_tmp = Vasp(restart = True, directory = target_path)
+            atoms = calc_tmp.get_atoms()
+            energy = atoms.get_potential_energy()
+            magmom = atoms.get_magnetic_moments()
+            break
+        elif convg_check == 'Unknown':
+            if VaspFatalError(target_path) is True:
+                (energy, magm) = recalculation(directory, i)
+            else:
+                unknown_error = True
+                break
+        elif convg_check is False:
+            print('    %s: not converged within given ionic steps' % target_path)
+            (energy, magm) = recalculation(directory, i, copy_chgcar = True)
+    if unknown_error is True:
+        energy = magmom = None
+    return convg_check, target_path, energy, magmom 
 
 ##############################################################################
 # NUPD_dictionary
@@ -117,8 +141,8 @@ initial_time = time.time()
 originalPath = os.getcwd()
 
 # Input parameters
-target_elements = ['Co', 'Ni', 'Cu', 'Zn']
-model_type = 'dvc4'
+target_elements = ['Ag', 'Cd']
+model_type = 'dvn4'
 
 # path_1 = 'NUPD/opt_%d' 
 # path_1_cnt = 'NUPD/opt_%d/cont%d'
@@ -138,13 +162,39 @@ for idx, TM in enumerate(TM_elements):
         for nupd in NUPD_dict[TM]:
             if os.path.exists(os.getcwd() + '/NUPD/opt_%d' % nupd):
                 path_1 = os.getcwd() + '/NUPD/opt_%d/' % nupd
+            else:
+                createFolder('NUPD/opt_%d' % nupd)
+                model_1 = read('np/POSCAR')
+                elements = model_1.get_chemical_symbols()
 
-            (path_1_cnt, convg_check_1) = check_convergence(path_1)
-            print('%s: %s' % (path_1_cnt, convg_check_1))
+                # MAGMOM settings
+                mag_dict = {}
+                for el in elements:
+                    if el in TM_elements:
+                        mag_dict[el] = 4.0
+                    else:
+                        mag_dict[el] = 0.6
+                magmoms = [mag_dict[el] for el in elements]
+ 
+                shutil.copy('np/CHGCAR', 'NUPD/opt_%d/' % nupd)
+                calc_1 = Vasp(restart = True, directory = 'np/')
+                calc_1.set(ispin = 2, nsw = 200, ibrion = 2, isif = 3, ediffg = -0.01, nupdown = nupd,
+                           directory = 'NUPD/opt_%d' % nupd)
+                model_1.set_initial_magnetic_moments(magmoms = magmoms)
+                model_1.calc = calc_1
+                try:
+                    model_1.get_potential_energy()
+                except:
+                    print('    Unknown error:%02d_%s' % (idx + 1, formula))
+                path_1 = os.getcwd() + '/NUPD/opt_%d/' % nupd
+
+            # Error check -> restart
+            start_time = time.time()
+            (convg_check_1, path_1_cnt, energy_1, magm_1) = recalculation_loop(path_1, n_iter = 4)
+            print('    %s: %s' % (path_1_cnt, convg_check_1))
 
             if convg_check_1 is True:
-                start_time = time.time()
-                print('    %02d_%s:SPE_nupd_%d_fin' % (idx + 1, formula, nupd))
+                print('    %02d_%s_nupd_%d_fin' % (idx + 1, formula, nupd))
                 createFolder('NUPD/opt_%d/fin' % nupd)
                 path_1_fin = os.getcwd() + '/NUPD/opt_%d/fin/' % nupd
 
@@ -152,58 +202,49 @@ for idx, TM in enumerate(TM_elements):
                 model_1 = calc_1.get_atoms()
                 magm_1 = model_1.get_magnetic_moments()
                 set_vacuum(model_1, TM)
-                calc_1.set(isif = 2, nelmdl = -12, gamma = True, directory = path_1_fin)
-                model_1.set_initial_magnetic_moments(magmoms = magm_1)
+                calc_1.set(isif = 2, magmom = magm_1, nelmdl = -12, gamma = True, isym = 2, directory = path_1_fin)
                 model_1.calc = calc_1
 
-                convg_check_1_fin = check_convergence(path_1_fin)[1]
+                convg_check_1_fin = check_convergence(path_1_fin)
                 if convg_check_1_fin is True:
-                    print('%s: %s' % (path_1_fin, convg_check_1_fin))
+                    print('    %s: %s' % (path_1_fin, convg_check_1_fin))
                 else:
                     try:
                         model_1.get_potential_energy()
                     except:
                         print('Unknown error:%02d_%s_fin' % (idx + 1, formula))
-                end_time = time.time()
-                print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
+                    (convg_check_1_fin, path_1_fin, energy_1, magm_1) = recalculation_loop(directory = path_1_fin, n_iter = 4)
+                    print('    %s: %s' % (path_1_fin, convg_check_1_fin))
 
-            elif convg_check_1 == 'Unknown':
-                start_time = time.time()
-                if VaspFatalError(path_1_cnt) is True:
-                    (energy, magm) = recalculation(path_1)
-                    end_time = time.time()
-                    print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
-                else:
-                    print("    Unknown error!")
+            end_time = time.time()
+            print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
 
-            elif convg_check_1 is False:
-                start_time = time.time()
-                (energy, magm) = recalculation(path_1, copy_chgcar = True)
-                end_time = time.time()
-                print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
-
+            # Spin-polar geop(NUPD_free)
             if os.path.exists(os.getcwd() + '/NUPD/opt_%d/relax' % nupd):
                 path_2 = os.getcwd() + '/NUPD/opt_%d/relax/' % nupd 
             else:
                 createFolder('NUPD/opt_%d/relax' % nupd)
+                path_2 = os.getcwd() + '/NUPD/opt_%d/relax/' % nupd
                 if convg_check_1 is True:
-                    shutil.copy(path_1_cnt + 'CHGCAR', 'NUPD/opt_%d/relax' % nupd)
-                calc_1.set(nupdown = -1, gamma = True, # isym = 0,
-                           directory = 'NUPD/opt_%d/relax' % nupd)
-                model_1.set_initial_magnetic_moments(magmoms = magm_1)
-                model_1.calc = calc_1
+                    shutil.copy(path_1_cnt + 'CHGCAR', path_2)
+                model_2 = read(path_1_cnt + 'CONTCAR')
+                calc_2 = Vasp(restart = True, directory = path_1_cnt)
+                calc_2.set(magmom = magm_1, nelmdl = -12, nupdown = -1, gamma = True, isym = 2,
+                           directory = path_2)
+                model_2.calc = calc_2
                 try:
-                    model_1.get_potential_energy()
-                    path_2 = os.getcwd() + '/NUPD/opt_%d/relax/' % nupd
+                    model_2.get_potential_energy()
                 except:
-                    print('    Unknown error:%02d_%s_relax' % (idx + 1, formula))
+                    print('    Unknown error! - NUPD/opt_%d/relax' % nupd)
 
-            (path_2_cnt, convg_check_2) = check_convergence(path_2)
-            print('%s: %s' % (path_2_cnt, convg_check_2))
+            # Error check -> restart
+            start_time = time.time()
+            (convg_check_2, path_2_cnt, energy_2, magm_2) = recalculation_loop(path_2, n_iter = 4)
+            print('    %s: %s' % (path_2_cnt, convg_check_2))
 
             if convg_check_2 is True:
                 start_time = time.time()
-                print('    %02d_%s:SPE_nupd_X_fin' % (idx + 1, formula))
+                print('    %02d_%s_nupd_X_fin' % (idx + 1, formula))
                 createFolder('NUPD/opt_%d/relax/fin' % nupd)
                 path_2_fin = os.getcwd() + '/NUPD/opt_%d/relax/fin/' % nupd
 
@@ -211,36 +252,23 @@ for idx, TM in enumerate(TM_elements):
                 model_2 = calc_2.get_atoms()
                 magm_2 = model_2.get_magnetic_moments()
                 set_vacuum(model_2, TM)
-                calc_2.set(isif = 2, nelmdl = -12, gamma = True, directory = path_2_fin)
-                model_2.set_initial_magnetic_moments(magmoms = magm_2)
+                calc_2.set(isif = 2, magmom = magm_2, nelmdl = -12, gamma = True, isym = 2, directory = path_2_fin)
                 model_2.calc = calc_2
               
-                convg_check_2_fin = check_convergence(path_2_fin)[1]
+                convg_check_2_fin = check_convergence(path_2_fin)
                 if convg_check_2_fin is True:
-                    print('%s: %s' % (path_2_fin, convg_check_2_fin))
+                    print('    %s: %s' % (path_2_fin, convg_check_2_fin))
                 else:
                     try:
                         model_2.get_potential_energy()
                     except:
                         print('Unknown error:%02d_%s_fin' % (idx + 1, formula))
-                end_time = time.time()
-                print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
+                    (convg_check_2_fin, path_2_fin, energy_2, magm_2) = recalculation_loop(directory = path_2_fin, n_iter = 4)
+                    print('    %s: %s' % (path_2_fin, convg_check_2_fin))
 
-            elif convg_check_2 == 'Unknown':
-                start_time = time.time()
-                if VaspFatalError(path_2_cnt) is True:
-                    (energy, magm) = recalculation(path_2)
-                    end_time = time.time()
-                    print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
-                else:
-                    print("    Unknown error!")
+            end_time = time.time()
+            print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
 
-            elif convg_check_2 is False:
-                start_time = time.time()
-                (energy, magm) = recalculation(path_2, copy_chgcar = True)
-                end_time = time.time()
-                print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
-                    
 final_time = time.time()
 print('Execution time for script (sec) : %6.1f' % (final_time - initial_time))
  
