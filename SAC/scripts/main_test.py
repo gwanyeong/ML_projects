@@ -248,8 +248,6 @@ for idx, TM in enumerate(TM_elements):
 
                 try:
                     model_1.get_potential_energy()
-#                   result_1 = 'results_nupd_%d.json' % nupd
-#                   calc_1.write_json(result_1)
                     magm_1 = model_1.get_magnetic_moments()
                 except:
                     print('    Unknown error:%02d_%s' % (idx + 1, formula))
@@ -304,7 +302,6 @@ for idx, TM in enumerate(TM_elements):
                     shutil.copy(path_1_cnt + 'CHGCAR', path_2)
                 model_2 = read(path_1_cnt + 'CONTCAR')
 
-#               calc_2 = Vasp(restart = True, directory = path_1_cnt)
                 calc_2 = Vasp()
                 calc_2.read_json(path_1 + filename_1)
 
