@@ -70,10 +70,8 @@ def recalculation(directory, i, fname, copy_chgcar = False):
 
     if copy_chgcar is True:
         shutil.copy('CHGCAR', direc_tmp + '/')
-#   calc_tmp = Vasp(restart = True)  # 
     calc_tmp = Vasp()
     calc_tmp.read_json(directory + fname)
-#   atoms = calc_tmp.get_atoms()
     calc_tmp.set(ispin = 2, directory = direc_tmp, txt = 'vasp.out')
     atoms = read(directory + 'CONTCAR')
     atoms.calc = calc_tmp
@@ -98,9 +96,6 @@ def recalculation_loop(directory, n_iter, fname):
         convg_check = check_convergence(target_path)
         if convg_check is True:
             print('    %s: converged' % target_path)
-         #  calc_tmp = Vasp()
-         #  calc_tmp.read_json(directory + fname)
-         #  atoms = read(target_path + 'CONTCAR')
             calc_tmp = Vasp(restart = True, directory = target_path)
             atoms = calc_tmp.get_atoms()
             energy = atoms.get_potential_energy()
@@ -205,6 +200,7 @@ for idx, TM in enumerate(TM_elements):
         os.chdir(originalPath + '/%02d_%s' % (idx+1, formula))
         print(os.getcwd())
 
+        # Calc. setting
         calc_init = Vasp(xc = 'rpbe', setups = {'base':'materialsproject','W':'_sv'},
                          kpts = (6,5,1), system = formula, idipol = 3, gamma = True,
                          istart = 0, icharg = 1, encut = 520, lmaxmix = 4,
@@ -232,6 +228,7 @@ for idx, TM in enumerate(TM_elements):
 
         createFolder('NUPD')
         for nupd in NUPD_dict[TM]:
+            start_time = time.time()
             filename_1 = 'settings_nupd_%d.json' % nupd
             if os.path.exists(os.getcwd() + '/NUPD/opt_%d' % nupd):
                 path_1 = os.getcwd() + '/NUPD/opt_%d/' % nupd
@@ -259,7 +256,6 @@ for idx, TM in enumerate(TM_elements):
                 path_1 = os.getcwd() + '/NUPD/opt_%d/' % nupd
 
             # Error check -> restart
-            start_time = time.time()
             (convg_check_1, path_1_cnt, energy_1, magm_1) = recalculation_loop(directory = path_1, n_iter = 4, fname = filename_1)
             print('    %s: %s' % (path_1_cnt, convg_check_1))
 
@@ -297,6 +293,7 @@ for idx, TM in enumerate(TM_elements):
             print('Calculation time(sec) : %6.1f\n' % (end_time - start_time))
 
             # Spin-polar geop(NUPD_free)
+            start_time = time.time()
             filename_2 = 'settings_nupd_X.json'
             if os.path.exists(os.getcwd() + '/NUPD/opt_%d/relax' % nupd):
                 path_2 = os.getcwd() + '/NUPD/opt_%d/relax/' % nupd 
@@ -320,12 +317,10 @@ for idx, TM in enumerate(TM_elements):
                     print('    Unknown error! - NUPD/opt_%d/relax' % nupd)
 
             # Error check -> restart
-            start_time = time.time()
             (convg_check_2, path_2_cnt, energy_2, magm_2) = recalculation_loop(directory = path_2, n_iter = 4, fname = filename_2)
             print('    %s: %s' % (path_2_cnt, convg_check_2))
 
             if convg_check_2 is True:
-                start_time = time.time()
                 print('    %02d_%s_nupd_X_fin' % (idx + 1, formula))
                 createFolder('NUPD/opt_%d/relax/fin' % nupd)
                 path_2_fin = os.getcwd() + '/NUPD/opt_%d/relax/fin/' % nupd
