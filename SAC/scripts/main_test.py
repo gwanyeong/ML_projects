@@ -235,7 +235,6 @@ for idx, TM in enumerate(TM_elements):
             else:
                 createFolder('NUPD/opt_%d' % nupd)
                 model_1 = read('np/POSCAR')
-                elements = model_1.get_chemical_symbols()
 
                 shutil.copy('np/CHGCAR', 'NUPD/opt_%d/' % nupd)
                 calc_1 = Vasp()
