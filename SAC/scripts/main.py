@@ -52,16 +52,23 @@ def check_convergence(directory):
     return check_results
 
 ##############################################################################
-def VaspFatalError(directory):
+def VaspError(directory):
     check_err = False
     for n, line in enumerate(fileinput.FileInput(directory + 'vasp.out')):
         if 'ZBRENT: fatal error' in line:
             print("    Restart calc. - fatal error")
-            check_err = True
+            check_err = 'ZBRENT'
+        elif "LAPACK: Routine ZPOTRF failed!" in line: # Consider to change 'isym' as 0
+#           print("    Restart calc. - LAPACK error")
+            check_err = 'LAPACK'
+        elif "VERY BAD NEWS! internal error in subroutine SGRCON:" in line:
+            check_err = 'SGRCON'
+        elif "RHOSYG internal error:" in line:
+            check_err = 'RHOSYG'
     return check_err
 
 ##############################################################################
-def recalculation(directory, i, nupdown, isif, copy_chgcar = False):
+def recalculation(directory, nupdown, isif, i, isym = 2, algo = 'fast', copy_chgcar = False):
     current_path = os.getcwd() # 'NUPD/opt_%d/' % nupd
     os.chdir(directory)
     direc_tmp = 'cont%d/' % (i)
@@ -72,15 +79,23 @@ def recalculation(directory, i, nupdown, isif, copy_chgcar = False):
             shutil.copy('CHGCAR', direc_tmp)
         calc_tmp = Vasp()
         calc_tmp.read_json(calc_path + 'settings_init.json')
-        calc_tmp.set(nsw = 200, nupdown = nupdown, isif = isif, 
-                     directory = direc_tmp, txt = 'vasp.out')
-        atoms = read(directory + 'CONTCAR')
+        calc_tmp.set(nsw = 200, nupdown = nupdown, isif = isif, isym = isym, 
+                     algo = algo, directory = direc_tmp, txt = 'vasp.out')
+        if i > 1:
+            model_path = 'cont%d/' % (i-1)
+        else:
+            model_path = ''
+        if isym == -1:
+            atoms = read(model_path + 'POSCAR')
+        else:
+            atoms = read(model_path + 'CONTCAR')
         atoms.calc = calc_tmp
     try:
         energy = atoms.get_potential_energy()
         magmom = atoms.get_magnetic_moments()
     except:
-        energy = magmom = None
+        energy = None
+        magmom = magmoms
     os.chdir(current_path)
 
     return energy, magmom
@@ -103,17 +118,21 @@ def recalculation_loop(directory, nupdown = -1, isif = 3, n_iter = 4):
             magmom = atoms.get_magnetic_moments()
             break
         elif convg_check == 'Unknown':
-            if VaspFatalError(target_path) is True:
-                (energy, magm) = recalculation(directory, i)
+            if VaspError(target_path) == 'ZBRENT':
+                (energy, magmom) = recalculation(directory, nupdown, isif, i)
+            elif VaspError(target_path) == 'LAPACK':
+                (energy, magmom) = recalculation(directory, nupdown, isif, i, algo = 'normal')
+            elif VaspError(target_path) == 'SGRCON' or 'RHOSYG':
+                (energy, magmom) = recalculation(directory, nupdown, isif, i, isym = -1)
             else:
                 unknown_error = True
                 break
         elif convg_check is False:
             print('    %s: not converged within given ionic steps' % target_path)
-            (energy, magm) = recalculation(directory, i, nupdown, isif, copy_chgcar = True)
+            (energy, magmom) = recalculation(directory, nupdown, isif, i, copy_chgcar = True)
     if unknown_error is True:
         print("    %s: unknown error - magmom is set to default value" % target_path)
-        energy =  None
+        energy = None
         magmom = magmoms
     return convg_check, target_path, energy, magmom 
 
@@ -154,8 +173,8 @@ initial_time = time.time()
 originalPath = os.getcwd()
 
 # Input parameters
-target_elements = ['Cu', 'Zn']
-model_type = 'dvn4'
+target_elements = ['Ni']
+model_type = 'svn3'
 
 # path_1 = 'NUPD/opt_%d' 
 # path_1_cnt = 'NUPD/opt_%d' or 'NUPD/opt_%d/cont%d'
@@ -259,7 +278,7 @@ for idx, TM in enumerate(TM_elements):
                 model_1 = read(path_1_cnt + 'CONTCAR')
                 
                 set_vacuum(model_1, TM)
-                calc_1.set(isif = 2, nsw = 200, magmom = magm_1, directory = path_1_fin, txt = 'vasp.out')
+                calc_1.set(isif = 2, nsw = 200, nupdown = nupd, magmom = magm_1, directory = path_1_fin, txt = 'vasp.out')
                 model_1.calc = calc_1
 
                 convg_check_1_fin = check_convergence(path_1_fin)
@@ -310,7 +329,7 @@ for idx, TM in enumerate(TM_elements):
                 model_2 = read(path_2_cnt + 'CONTCAR')
 
                 set_vacuum(model_2, TM)
-                calc_2.set(isif = 2, nsw = 200, magmom = magm_2, directory = path_2_fin, txt = 'vasp.out')
+                calc_2.set(isif = 2, nsw = 200, nupdown = -1, magmom = magm_2, directory = path_2_fin, txt = 'vasp.out')
                 model_2.calc = calc_2
               
                 convg_check_2_fin = check_convergence(path_2_fin)

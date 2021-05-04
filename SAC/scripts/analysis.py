@@ -59,14 +59,15 @@ properties = ['formula','nupd','convg_fix','tot_E_fix','convg_relax','tot_E_rela
 
 initial_time = time.time()
 
-originalPath = os.getcwd()
-
 # Input parameters
-model_type = 'dvn4'
-# target_elements = ['Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd']
+model_type = 'svn3'
 target_elements = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn']
+# target_elements = ['Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd']
+# target_elements = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn']
 # target_elements = TM_elements
 
+# originalPath = os.getcwd()
+originalPath = '/scratch/x2045a01/vasp/SAC/%s/new' % model_type
 
 tot_num = 0
 for TM in TM_elements:
@@ -125,6 +126,8 @@ for idx, TM in enumerate(TM_elements):
 
             convg_check_4 = check_convergence(path_4)
             print('%s: %s' % (path_4, convg_check_4))
+
+            path_OOH = path_4 + 'OOH/'
 
             df.formula[num+nupd] = formula
             df.nupd[num+nupd] = nupd
