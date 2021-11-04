@@ -1,14 +1,3 @@
-#*************************************************************************************
-#*                                                                                   *
-#*	This script convert MS xsd document to POSCAR for VASP                           *
-#*                                                                                   *
-#*                                                                                   *
-#*	version  : 1.0                                                                   *
-#*	Author   : Se Hun Joo                                                            *
-#*	Date     : 12.14.2016                                                            *
-#*                                                                                   *
-#*************************************************************************************
-
 #!perl
 use strict;
 use Getopt::Long;
@@ -18,11 +7,11 @@ use MaterialsScript qw(:all);
 # user input
 #======================================================================
 
-my $xsdname = "zwitter_v1_2L";
+my $xsdname = "NbTaS2_1";
 my $doc = $Documents{$xsdname.".xsd"};
 my $coordinate = "Direct"; # "Direct" or "Cartesian"
 
-# 고정하고 싶은 원자의 이름은 Fix로 설정
+# Name the atoms to be fixed
 
 #======================================================================
 # main
@@ -34,7 +23,7 @@ my $vectorB = $doc->Lattice3D->VectorB;
 my $vectorC = $doc->Lattice3D->VectorC;
 
 printf "%s\n", $xsdname;
-printf "   1.00000000000000\n";
+printf "   1.00000000000  000\n";
 printf "  %21.16f %21.16f %21.16f\n", $vectorA->X,$vectorA->Y,$vectorA->Z;
 printf "  %21.16f %21.16f %21.16f\n", $vectorB->X,$vectorB->Y,$vectorB->Z;
 printf "  %21.16f %21.16f %21.16f\n", $vectorC->X,$vectorC->Y,$vectorC->Z;
