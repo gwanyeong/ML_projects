@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jul  7 13:41:46 2020
-
 @author: gyjung
 """
 
+
 import os
+import warnings
+warnings.filterwarnings('ignore')
 
 """
 Make plot directory
@@ -90,23 +92,18 @@ plt.savefig('plots/brillouin_fig.pdf')
 
 """
 # Another plot type
-
 bsplot_proj = BSPlotterProjected(bs)
 bsplot_proj.get_elt_projected_plots(vbm_cbm_marker = True)
-
 # bsplot_proj.get_projected_plots_dots({"Ti":["s","p","d"], "O":["s", "p"]}, ylim = [-5,5], vbm_cbm_marker = True)
 """
 
 
 """
 # Getting raw data for specific bands & kpts
-
 from pymatgen import Spin
-
 data = bsplot.bs_plot_data()
 ibands = 9
 spin = str(Spin.up)
-
 for xpath, epath in zip(data['distances'], data['energy']):
     print(20 * "-")
     for x, bands in zip(xpath, epath[spin][ibands]):
@@ -122,8 +119,8 @@ from pymatgen.electronic_structure.plotter import BSDOSPlotter
 bsdosplot = BSDOSPlotter(
         bs_projection = "elements",
         dos_projection = "elements",
-        vb_energy_range = 10,
-        cb_energy_range = 10,
+        vb_energy_range = 2,
+        cb_energy_range = 2,
         egrid_interval = 2,
         font = 'DejaVu Sans'
         )
@@ -133,7 +130,7 @@ bsdosplot.get_plot(bs, cdos).savefig('plots/band_dos.pdf')
 
 """
 Summary
-""" 
+"""
 
 with open('plots/summary', 'w') as f:
     if (type(vbm) and type(cbm)) == float:
@@ -163,14 +160,14 @@ if file_list != []:
 
     # Read in ICOHPLIST.lobster and get lcohpcollection object
     icohplist = Icohplist(filename = os.getcwd() + '/ICOHPLIST.lobster')
-    
+
     idx_list = [idx for idx in list(icohplist.icohplist)]
 
     # search for the number of the COHP you would like to plot in ICOHPLIST.lobster
     # (the numbers in COHPCAR.lobster are different!)
 
     cp = CohpPlotter()
-    
+
     # make COHPs directory
     try:
         if not(os.path.isdir('COHPs')):
@@ -179,15 +176,15 @@ if file_list != []:
         if e.errno != errno.EEXIST:
             print("WARNING: COHPs directory already exists")
             raise
-    
+
 
     for idx in idx_list:
         species1 = completecohp.bonds[idx]['sites'][0]
         species2 = completecohp.bonds[idx]['sites'][1]
         plotlabel = str(species1.species_string) + '-' + str(species2.species_string)
 
-        cp.add_cohp(plotlabel, completecohp.get_cohp_by_label(label = idx))        
-        
+        cp.add_cohp(plotlabel, completecohp.get_cohp_by_label(label = idx))
+
         # check which COHP you are plotting
         print("This is a COHP between the following sites: " + str(species1) + ' and' + str(species2))
 
@@ -197,3 +194,7 @@ if file_list != []:
 
 else:
     print('lobster files are not found !!')
+~                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+~                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+~                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+~                                                              
